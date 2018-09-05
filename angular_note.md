@@ -25,7 +25,7 @@ angular下载安装
 		polyfills.ts：导入一些必要的库
 		styles.css：全局的样式写在这里。
 
-	angular-cli.json 可能需要测试
+	angular-cli.json Angular命令行工具的配置文件。后期可能会去修改它，引一些其他的第三方的包
 	karma:执行自动化测试的
 	package.json模块
 组件的必备元素：下面三项
@@ -40,9 +40,56 @@ angular下载安装
 启动：ng serve
 
 使用第三方库：
-1、安装类库：npm install jqery --save (--save：把依赖寄到npm，packege.json文件中)
+1、安装类库：npm install jquery --save (--save：把依赖寄到npm，packege.json文件中)，安装指定版本jquery@+版本
 2、把库引到项目中，添加到style和script中
    在app.component.ts里面使用$符号的时候会报错，因为$是js中的，这里是ts，需要把ts的类型描述文件安装到本地的库中去。要让ts代码认识jquery和bootstrap，命令（npm install @types/bootstrap --save,jquery同前面的）
    
 auction组件图
 ![auction组件图](https://github.com/CoderMrD/Note/blob/master/auction%E7%BB%84%E4%BB%B6.png)
+
+生成组件:
+app组件在创建项目的时候已经被生成，命令创建另外六个组件
+ng g component navbar 导航栏组件
+ng g component footer 页脚组件
+ng g component search 搜索表单组件
+ng g component carousel 轮播图组件
+ng g component product 商品展示组件
+ng g component stars  星级评价组件
+
+
+### bootstrap
+
+#### div
+- class="container"生成了一个容器,固定宽度,.container-fluid （100% 宽度）
+- class="row"添加行
+- class="col-md-3",列，包裹于行内，md为中等屏幕 桌面显示器 (≥992px)
+不管在哪种屏幕上，栅格系统都会自动的每行row分12列col-md-后面跟的参数表示在当前的屏幕中，每个div所占列数，3就是3/12，即1/4
+
+#### nav
+
+- <nav> 标签定义导航链接的部分。
+- 提示：如果文档中有“前后”按钮，则应该把它放到 <nav> 元素中。
+- navbar-default   navbar-inverse 这两个控制颜色的属性，一白一黑。 
+- navbar主要功能是设置padding，圆角。
+- navbar-fixed-top 导航栏固定到顶部
+- <div> 元素添加一个标题 class .navbar-header，内部包含了带有 class navbar-brand 的 <a> 元素。这会让文本看起来更大一号
+- 为了向导航栏添加链接，只需要简单地添加带有 class .nav、.navbar-nav 的无序列表即可
+nav  nav-navbar属性要一起使用，设置浮动菜单项。
+
+ul 是无序列表 。内含列表项 li
+
+- data-toggle(与class同等级别):指以什么事件触发
+- data-target:指事件的目标
+
+响应式的导航栏
+为了给导航栏添加响应式特性，您要折叠的内容必须包裹在带有 class .collapse、.navbar-collapse 的 <div> 中。
+折叠起来的导航栏实际上是一个带有 class .navbar-toggle 及两个 data- 元素的按钮。
+第一个是 data-toggle，用于告诉 JavaScript 需要对按钮做什么，第二个是 data-target，指示要切换到哪一个元素。三个带有 class .icon-bar 的 <span> 创建所谓的汉堡按钮。
+这些会切换为 .nav-collapse <div> 中的元素
+
+error：
+Uncaught TypeError: Cannot read property 'fn' of undefined
+在进行前端的开发要注意顺序.将packaage中的jquery和bootstrap引入顺序改一下，先导入jQuery，再导入bootstrap即可
+bootstrap中css样式不生效，看一下是不是版本不对
+
+

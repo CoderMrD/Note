@@ -44,3 +44,6 @@ merge操作，合并分支
 
 原始分支----目标分支（需要更新的分支)
 
+取消暂存看提示
+eg:git reset HEAD benchmarks.rb
+
