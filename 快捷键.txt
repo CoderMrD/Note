@@ -1,0 +1,4 @@
+alt+space+n 最小化
+alt+space+x 最大化
+Ctrl+shift+h ie浏览器历史记录
+Ctrl + Shift + F pycharm全局查找

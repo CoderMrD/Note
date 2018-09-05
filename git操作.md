@@ -1,0 +1,46 @@
+git init 用 Git 来对现有的项目进行管理
+git clone https://github.com/xxx  克隆现有的仓库
+
+git add .   //全部上传
+git status  //查看文件是否添加到暂存区，掌握仓库的当前状态
+git commit -m "批注"  //添加注释，提交到仓库
+git push    //推送到远程仓库
+git diff "文件名" //比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
+git diff --cached  暂存起来的文件和上次提交时的快照之间的差异
+git pull：取回远程主机某个分支的更新，再与本地的指定分支合并
+
+git remote add origin https://xxx    关联到远程仓库
+
+git branch  //查看当前分支,当前分支前面会标一个*号
+git checkout -b dev // 创建dev分支，并切换到dev分支（加上-b表示创建并切换）
+
+git branch dev //创建分支
+git branch -d dev //删除dev分支
+git checkout dev //切换分支
+
+git branch -vv  // 查看本地分支对应的远程分支
+
+git log //显示从最近到更远的提交日志，太多的话可以加上--pretty=oneline参数，不看详细信息
+回退
+HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~100往上100个版本
+git reset --hard commit_id返回到某个版本
+git reset --hard HEAD^ 回退到上一个版本 
+向前（命令窗口还没被关掉）
+git reset --hard 1094a //版本号没必要写全，写前几位git就会自动去找
+git reflog 记录每一条命令
+
+工作区：电脑里面能看到的目录
+.git不算工作区，而是git的版本库，里面有暂存区和分支
+git添加文件需要两步，git add把文件添加进去，实际上就是把文件修改添加到暂存区
+git commit  提交更改，实际上就是把暂存区的所有内容提交到当前分支。
+暂存区（Stage）在版本库里面
+
+提交code流程:
+	1、发起merge
+	2、please熟悉的人review
+	3、accept merge Request
+	
+merge操作，合并分支
+
+原始分支----目标分支（需要更新的分支)
+
