@@ -42,5 +42,7 @@ angular下载安装
 使用第三方库：
 1、安装类库：npm install jqery --save (--save：把依赖寄到npm，packege.json文件中)
 2、把库引到项目中，添加到style和script中
-   要让ts代码认识jquery和bootstrap，命令（npm install @types/bootstrap --save,jquery同前面的）
-
+   在app.component.ts里面使用$符号的时候会报错，因为$是js中的，这里是ts，需要把ts的类型描述文件安装到本地的库中去。要让ts代码认识jquery和bootstrap，命令（npm install @types/bootstrap --save,jquery同前面的）
+   
+auction组件图
+![auction组件图](https://github.com/CoderMrD/Note/blob/master/auction%E7%BB%84%E4%BB%B6.png)
