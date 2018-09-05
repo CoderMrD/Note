@@ -47,3 +47,7 @@ merge操作，合并分支
 取消暂存看提示
 eg:git reset HEAD benchmarks.rb
 
+添加中文：
+使用git add添加要提交的文件的时候，如果文件名是中文，会显示形如 274\232\350\256\256\346\200\273\347\273\223.png 的乱码。 
+解决方案：在bash提示符下输入： git config --global core.quotepath false
+
