@@ -69,6 +69,7 @@ ng g component stars  星级评价组件
 
 - <nav> 标签定义导航链接的部分。
 - 提示：如果文档中有“前后”按钮，则应该把它放到 <nav> 元素中。
+以下是class属性
 - navbar-default   navbar-inverse 这两个控制颜色的属性，一白一黑。 
 - navbar主要功能是设置padding，圆角。
 - navbar-fixed-top 导航栏固定到顶部
@@ -76,6 +77,7 @@ ng g component stars  星级评价组件
 - 为了向导航栏添加链接，只需要简单地添加带有 class .nav、.navbar-nav 的无序列表即可
 nav  nav-navbar属性要一起使用，设置浮动菜单项。
 
+按钮中间加入<span class="icon-bar"></span>会多一道横线，看着比较清晰，一般加三条
 ul 是无序列表 。内含列表项 li
 
 - data-toggle(与class同等级别):指以什么事件触发
