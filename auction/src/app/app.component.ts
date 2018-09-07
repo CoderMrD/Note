@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,5 @@ import { $ } from 'protractor';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'auction working.....';
+  title = 'auction';
 }
