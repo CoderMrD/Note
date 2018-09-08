@@ -27,6 +27,9 @@ git clone https://github.com/xxx  克隆现有的仓库
 - Git diff branch1 branch2 文件名(带路径)   //显示指定文件的详细差异
 - Git diff branch1 branch2  //显示出所有有差异的文件的详细差异
 
+- git branch --set-upstream-to=origin/test 当前分支关联到远程test分支
+
+
 - git log //显示从最近到更远的提交日志，太多的话可以加上--pretty=oneline参数，不看详细信息
 回退
 - HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~100往上100个版本
@@ -55,6 +58,20 @@ merge操作，合并分支
 1、git rm --cached -r 文件夹
 2、git commit -m "说明"
 3、git push
+
+在使用git命令的时候，后面可能会带有参数，有些参数前面是单横杠有些是双横杠。
+下面就简单介绍一下两种横杠的使用场景。
+一.单横杠短选项命令（UNIX风格）：
+（1）.一个短选项命令，由横杠（-）紧跟单个短选项字符。
+（2）.多个短选项命令，由横杠（-）紧跟每个短选项字符。
+（3）.命令和参数之间用空格分隔。
+（4）.仅作为连字符。
+ eg:git commit -m "蚂蚁部落第一次提交"
+
+二.双横杠长选项命令（GNU风格）：
+（1）.长选项命令，有两个（--）紧跟长选项单词（单词不能简写）。
+（2）.长选项后面跟参数，用空格或等号分隔。
+eg:git log --pretty=oneline
 
 取消暂存看提示
 eg:git reset HEAD benchmarks.rb
