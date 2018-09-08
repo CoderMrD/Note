@@ -21,7 +21,6 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git branch -vv  // 查看本地分支对应的远程分支
 
 - git push origin master推送到远程分支，如果没有则创建
-- git merge dev 将dev分支的更改合并到当前分支
 - git log dev ^master 查看dev中有，master中没有的（暂时不会用）
 - Git diff branch1 branch2 --stat   //显示出所有有差异的文件列表
 - Git diff branch1 branch2 文件名(带路径)   //显示指定文件的详细差异
@@ -51,6 +50,7 @@ git commit  提交更改，实际上就是把暂存区的所有内容提交到�
 	3、accept merge Request
 	
 merge操作，合并分支
+- git merge dev 将dev分支的更改合并到当前分支
 
 原始分支----目标分支（需要更新的分支)
 
