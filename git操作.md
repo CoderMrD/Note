@@ -22,7 +22,10 @@ git clone https://github.com/xxx  克隆现有的仓库
 
 - git push origin master推送到远程分支，如果没有则创建
 - git merge dev 将dev分支的更改合并到当前分支
-- git log dev ^master 查看dev中有，master中没有的
+- git log dev ^master 查看dev中有，master中没有的（暂时不会用）
+- Git diff branch1 branch2 --stat   //显示出所有有差异的文件列表
+- Git diff branch1 branch2 文件名(带路径)   //显示指定文件的详细差异
+- Git diff branch1 branch2  //显示出所有有差异的文件的详细差异
 
 - git log //显示从最近到更远的提交日志，太多的话可以加上--pretty=oneline参数，不看详细信息
 回退
