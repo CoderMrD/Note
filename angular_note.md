@@ -91,9 +91,14 @@ ul 是无序列表 。内含列表项 li
 第一个是 data-toggle，用于告诉 JavaScript 需要对按钮做什么，第二个是 data-target，指示要切换到哪一个元素。三个带有 class .icon-bar 的 <span> 创建所谓的汉堡按钮。
 这些会切换为 .nav-collapse <div> 中的元素
 
+带有大于号的选择器，代表选择标签时仅作用与儿子标签而不作用于孙子标签(只有二级标签起作用,一级都不起作用)
+eg:div>span只有在div中的二级标签span才起作用
+
 error：
 Uncaught TypeError: Cannot read property 'fn' of undefined
 在进行前端的开发要注意顺序.将packaage中的jquery和bootstrap引入顺序改一下，先导入jQuery，再导入bootstrap即可
 bootstrap中css样式不生效，看一下是不是版本不对
 
 
+响应式布局：（width=device-width表示当前大小按照设备大小，后一个是缩放，等于1是不缩放）
+在head中添加<meta name="viewport" content="width=device-width,initial-scale=1">
