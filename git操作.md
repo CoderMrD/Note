@@ -21,6 +21,7 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git branch -vv  // 查看本地分支对应的远程分支
 
 - git push origin master推送到远程分支，如果没有则创建
+- git merge dev 将dev分支的更改合并到当前分支
 
 - git log //显示从最近到更远的提交日志，太多的话可以加上--pretty=oneline参数，不看详细信息
 回退
