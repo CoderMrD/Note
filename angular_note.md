@@ -57,6 +57,8 @@ ng g component product 商品展示组件
 ng g component stars  星级评价组件
 
 
+调用组件：在app.component.html中添加<app-navbar></app-navbar>,当做标签添加
+
 ### bootstrap
 
 #### div
