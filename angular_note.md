@@ -133,7 +133,8 @@ form 元素的 name 属性提供了一种在脚本中引用表单的方法。
 - btn-primary：原始按钮样式
 - btn-block:拉伸至父级元素的宽度
 
-
+#### carousel(轮播图)
+仿制。。。。
 
 各个组件都是从顶部开始排的，所以会出现覆盖的情况，可以在style.css中加入样式，body{ padding-top:70px} padding-top是设置上内边距
 
