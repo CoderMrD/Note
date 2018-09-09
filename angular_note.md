@@ -107,6 +107,16 @@ eg：@media (min-width: 768px)最小宽度为768px的时候
 带有大于号的选择器，代表选择标签时仅作用与儿子标签而不作用于孙子标签(只有二级标签起作用,一级都不起作用)
 eg:div>span只有在div中的二级标签span才起作用
 
+
+#### 基本表单结构
+
+基本的表单结构是 Bootstrap 自带的，个别的表单控件自动接收一些全局样式。下面列出了创建基本表单的步骤：
+1. 向父 <form> 元素添加 role="form"。
+2. 把标签和控件放在一个带有 class .form-group 的 <div> 中。这是获取最佳间距所必需的。（增加块元素的下部留白或下部边界，从而使块元素的间距变大）
+3. 向所有的文本元素 <input>、<textarea> 和 <select> 添加 class ="form-control" 。（换行+填充整行 ）
+
+- <input>的placeholder 属性规定可描述输入字段预期值的简短的提示信息
+
 role属性：告知标签的作用
 
 <hr>被水平线分隔的标题和段落
@@ -116,6 +126,14 @@ form表单中name属性规定表单的名称。
 form 元素的 name 属性提供了一种在脚本中引用表单的方法。
 
 <label> 标签为 input 元素定义标注
+
+
+#### 按钮
+- btn 基本按钮样式
+- btn-primary：原始按钮样式
+- btn-block:拉伸至父级元素的宽度
+
+
 
 各个组件都是从顶部开始排的，所以会出现覆盖的情况，可以在style.css中加入样式，body{ padding-top:70px} padding-top是设置上内边距
 
