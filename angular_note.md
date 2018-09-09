@@ -65,11 +65,19 @@ ng g component stars  星级评价组件
 - class="container"生成了一个容器,固定宽度,.container-fluid （100% 宽度）
 - class="row"添加行
 - class="col-md-3",列，包裹于行内，md为中等屏幕 桌面显示器 (≥992px)
+- col-lg-12 大屏幕,>1200px
 不管在哪种屏幕上，栅格系统都会自动的每行row分12列col-md-后面跟的参数表示在当前的屏幕中，每个div所占列数，3就是3/12，即1/4
 
 #### nav
 
-- <nav> 标签定义导航链接的部分。
+- .navbar-header ，负责包裹brand和折叠按钮，控制小屏幕时brand和按钮的位置，控制导航列表的布局。
+- .navbar-brand, 负责左边logo区的默认样式
+- .nav 负责定义成垂直导航的样式
+- navbar-toggle：负责定义按钮的样式，里面用三个盒子绘制三条线。在大屏幕时消失。
+- collapse，负责控制显示和隐藏
+- .navbar-collapse: 负责被折叠盒子的样式
+
+
 - 提示：如果文档中有“前后”按钮，则应该把它放到 <nav> 元素中。
 以下是class属性
 - navbar-default   navbar-inverse 这两个控制颜色的属性，一白一黑。 
@@ -86,13 +94,30 @@ ul 是无序列表 。内含列表项 li
 - data-target:指事件的目标
 
 响应式的导航栏
-为了给导航栏添加响应式特性，您要折叠的内容必须包裹在带有 class .collapse、.navbar-collapse 的 <div> 中。
+为了给导航栏添加响应式特性，要折叠的内容必须包裹在带有 class .collapse、.navbar-collapse 的 <div> 中。
 折叠起来的导航栏实际上是一个带有 class .navbar-toggle 及两个 data- 元素的按钮。
 第一个是 data-toggle，用于告诉 JavaScript 需要对按钮做什么，第二个是 data-target，指示要切换到哪一个元素。三个带有 class .icon-bar 的 <span> 创建所谓的汉堡按钮。
 这些会切换为 .nav-collapse <div> 中的元素
 
+!important增加样式权重，如果没有这个，出现的晚的样式权重会更高，更加准确定位的权重更高
+
+@media 条件添加css样式
+eg：@media (min-width: 768px)最小宽度为768px的时候
+
 带有大于号的选择器，代表选择标签时仅作用与儿子标签而不作用于孙子标签(只有二级标签起作用,一级都不起作用)
 eg:div>span只有在div中的二级标签span才起作用
+
+role属性：告知标签的作用
+
+<hr>被水平线分隔的标题和段落
+
+
+form表单中name属性规定表单的名称。
+form 元素的 name 属性提供了一种在脚本中引用表单的方法。
+
+<label> 标签为 input 元素定义标注
+
+各个组件都是从顶部开始排的，所以会出现覆盖的情况，可以在style.css中加入样式，body{ padding-top:70px} padding-top是设置上内边距
 
 error：
 Uncaught TypeError: Cannot read property 'fn' of undefined
