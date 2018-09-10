@@ -1,10 +1,11 @@
 angular2以前叫做angularjs，以后统称为angular
 
-angular核心特点：方便快捷的编写，高重用的组件，核心就是组件
+angular核心特点：方便快捷的编写，高重用的组件，核心就是组件，数据绑定，通过操作后台数据，改变前台页面
 
 对比：
 	react:速度，适合于其他框架结合用
 	vue：简单，灵活，性能，尺寸小
+	jquery：操作页面元素DOM
 
 angular下载安装
 1、安装nodejs，官网下载，一路下一步（命令行中npm -v可以看到版本号，安装成功）
@@ -136,7 +137,26 @@ form 元素的 name 属性提供了一种在脚本中引用表单的方法。
 #### carousel(轮播图)
 仿制。。。。
 
+#### product
+1. 在product.component.ts中创建商品的类（export class Product{constructor}），constructor构造
+2. 在export class ProductComponent implements OnInit类中声明一个private products: Array<Product>;
+3. 在ngOnInit中添加只调用一次的数据
+4. div中添加*ngFor, *ngFor根据products数组中的数量来生成相应的代码数量,遍历
+
+#### star
+1. 显示实心星星<span class="glyphicon glyphicon-star"></span>，在加上glyphicon-star-empty变成空心的星星，
+2. 生成5颗星星在后台添加，ts文件中定义私有变量stars,布尔类型数组，然后在ngoninit中定义数值
+3. 将商品组件中的数据传递给星级评价的组件,在子属性加上装饰器@Input,然后在调用这个组建的地方把值传递进去<app-stars [rating]="product.rating"></app-stars>
+
+
+数据绑定
+插值表达式{{}}，直接把对象的属性展示在页面上
+属性绑定：将html的标签属性和控制器上的属性做绑定eg：将span的class的glyphicon-star-empty属性和后台的star绑定
+<span [class.glyphicon-star-empty]="star"></span>
+
 各个组件都是从顶部开始排的，所以会出现覆盖的情况，可以在style.css中加入样式，body{ padding-top:70px} padding-top是设置上内边距
+
+margin-bottom:下边距
 
 error：
 Uncaught TypeError: Cannot read property 'fn' of undefined
