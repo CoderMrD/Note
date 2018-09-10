@@ -167,6 +167,8 @@ Uncaught TypeError: Cannot read property 'fn' of undefined
 在进行前端的开发要注意顺序.将packaage中的jquery和bootstrap引入顺序改一下，先导入jQuery，再导入bootstrap即可
 bootstrap中css样式不生效，看一下是不是版本不对
 
+- Unexpected end of JSON input while parsing near:npm cache clean --force
+
 
 响应式布局：（width=device-width表示当前大小按照设备大小，后一个是缩放，等于1是不缩放）
 在head中添加<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -174,3 +176,4 @@ bootstrap中css样式不生效，看一下是不是版本不对
 ## router
 ![Angular_Route导航](https://github.com/CoderMrD/Note/blob/master/image/Angular_Route%E5%AF%BC%E8%88%AA.png)
 ![Angular_Route模块](https://github.com/CoderMrD/Note/blob/master/auction%E7%BB%84%E4%BB%B6.png)
+
