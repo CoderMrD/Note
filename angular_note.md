@@ -172,4 +172,5 @@ bootstrap中css样式不生效，看一下是不是版本不对
 在head中添加<meta name="viewport" content="width=device-width,initial-scale=1">
 
 ## router
-
+![Angular_Route导航](https://github.com/CoderMrD/Note/blob/master/image/Angular_Route%E5%AF%BC%E8%88%AA.png)
+![Angular_Route模块](https://github.com/CoderMrD/Note/blob/master/auction%E7%BB%84%E4%BB%B6.png)
