@@ -158,6 +158,8 @@ form 元素的 name 属性提供了一种在脚本中引用表单的方法。
 
 margin-bottom:下边距
 
+单页Web应用（single page web application，SPA），就是只有一张Web页面的应用，是加载单个HTML 页面并在用户与应用程序交互时动态更新该页面的Web应用程序，是指在浏览器中运行的应用，它们在使用期间不会重新加载页面。
+
 error：
 Uncaught TypeError: Cannot read property 'fn' of undefined
 在进行前端的开发要注意顺序.将packaage中的jquery和bootstrap引入顺序改一下，先导入jQuery，再导入bootstrap即可

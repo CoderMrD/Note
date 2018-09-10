@@ -23,8 +23,6 @@ export class ProductComponent implements OnInit {
       new Product(5,"第五个商品",11.99,3.5,"这是一个描述",["类别1","类别2"]),
       new Product(6,"第六个商品",12.99,3.5,"这是一个描述",["类别1","类别2"])
     ]
-
-    this.products.push(new Product(7,"第七个商品",12.99,3.5,"这是一个描述",["类别1","类别2"]))
 }
 }
 
