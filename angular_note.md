@@ -1,3 +1,5 @@
+## angular基础
+
 angular2以前叫做angularjs，以后统称为angular
 
 angular核心特点：方便快捷的编写，高重用的组件，核心就是组件，数据绑定，通过操作后台数据，改变前台页面
@@ -168,3 +170,5 @@ bootstrap中css样式不生效，看一下是不是版本不对
 
 响应式布局：（width=device-width表示当前大小按照设备大小，后一个是缩放，等于1是不缩放）
 在head中添加<meta name="viewport" content="width=device-width,initial-scale=1">
+
+## router
