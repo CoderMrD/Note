@@ -1,3 +1,5 @@
 <p>
-  stars works!
+  <!-- span的class的glyphicon-star-empty属性的和后台的"star"绑定 -->
+  <span *ngFor="let star of stars" class="glyphicon glyphicon-star" [class.glyphicon-star-empty]="star"></span>
+  <span>{{rating}}星</span>
 </p>
