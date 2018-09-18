@@ -176,10 +176,31 @@ args： target调用的实参，元组格式。默认为 ()，即不传参。
 daemon： 为False表示父线程在运行结束时需要等待子线程结束才能结束程序，为True则表示父线程在运行结束时，子线程无论是否还有任务未完成都会跟随父进程退出，结束程序。（python2和3可能有区别）
 `
 
-- start()方法：
+- start方法和run方法
 
-- run()
+`
+start() 方法是启动一个子线程，线程名就是我们定义的name
+run() 方法并不启动一个新线程，就是在主线程中调用了一个普通函数而已。
+想启动多线程，就必须使用start()方法。
+`
 
+- threading.current_thread().name  
+
+`
+线程名，只是一个标识符，可以使用getName()、setName()获取和运行时重命名。
+`
+
+- threading.current_thread().ident       
+  
+`
+线程ID，非0整数。线程启动后才会有ID，否则为None。线程退出，此ID依旧可以访问。此ID可以重复使用
+`
+
+- threading.current_thread().is_alive()  
+
+`
+返回线程是否存活，布尔值，True或False。
+`
 
 - join([timeout])方法
 
