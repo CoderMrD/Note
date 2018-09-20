@@ -59,7 +59,7 @@ ng g component carousel 轮播图组件
 ng g component product 商品展示组件
 ng g component stars  星级评价组件
 
-
+    
 调用组件：在app.component.html中添加<app-navbar></app-navbar>,当做标签添加
 
 ### bootstrap
@@ -177,3 +177,12 @@ bootstrap中css样式不生效，看一下是不是版本不对
 ![Angular_Route导航](https://github.com/CoderMrD/Note/blob/master/image/Angular_Route%E5%AF%BC%E8%88%AA.png)
 ![Angular_Route模块](https://github.com/CoderMrD/Note/blob/master/auction%E7%BB%84%E4%BB%B6.png)
 
+#### Angular_Route导航
+- Routes:路由配置，在app-routing.module.ts中的const routes中可以添加字典， {path: '',component: HomeComponent}，在访问根路由会出现home组件，path里面不能用斜杠/开头，为了自由的使用相对路径和绝对路径。
+- <router-outlet></router-outlet>给组件占位
+- routerlink在html中声明路由导航用的指令。<a [routerLink]="['/']">主页</a>
+参数是一个数组，而不是一个字符串。若是想传递参数，可以在后面添加
+- <!-- (click)，angular数据绑定的第三种方式，事件绑定，input这个button，由控制器的toProductDetails()方法处理 -->
+<input type="button" value="商品详情" (click)="toProductDetails()">
+
+code404组件，如果输入不存在路由的时候，显示code404组件
