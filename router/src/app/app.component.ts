@@ -11,10 +11,9 @@ export class AppComponent {
 
   // 这样可以拿到一个router对象，依赖注入中的内容
   constructor(private router:Router){
-
   }
 
   toProductDetails(){
-    this.router.navigate(['/product'])
+    this.router.navigate(['/product',2])
   }
 }

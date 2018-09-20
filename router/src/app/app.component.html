@@ -1,6 +1,12 @@
 <!-- 这里的路由必须加斜杠，表示根路由 -->
-<a [routerLink]="['/']">主页</a>
-<a [routerLink]="['/product']">商品详情</a>
+<a [routerLink]="['/home']">主页</a>
+
+<!-- 查询方式传递参数 -->
+<!-- <a [routerLink]="['/product']" [queryParams]="{id: 1}">商品详情</a> -->
+
+<!-- 路由路径中传递参数 -->
+<a [routerLink]="['/product',1]">商品详情</a>
+
 <!-- (click)，angular数据绑定的第三种方式，事件绑定，input这个button，由控制器的toProductDetails()方法处理 ，是调用的后台-->
 <input type="button" value="商品详情" (click)="toProductDetails()">
 <!-- 插座，组件显示在这个后面 -->

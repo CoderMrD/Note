@@ -179,6 +179,13 @@ bootstrap中css样式不生效，看一下是不是版本不对
 
 #### Angular_Route导航
 - Routes:路由配置，在app-routing.module.ts中的const routes中可以添加字典， {path: '',component: HomeComponent}，在访问根路由会出现home组件，path里面不能用斜杠/开头，为了自由的使用相对路径和绝对路径。
+路由的名字最好与组件的名称一致，便于开发。
+  // 访问根路由时，重定向到home
+  {path: '',redirectTo: '/home',pathMatch: 'full'}
+- 在路由时传递数据：
+	1. 在查询参数中传递数据：{/product?id=1&name=2 => ActivatedRoute.queryParams[id]，在路由的目标组件中用后面的方式获取参数
+	2. 在路由路径中传递数据：path:/product/:id} => /product/1 => ActivatedRoute.params[id]，在定义路由路径的时候就要指定参数的名字
+	3. 在路由配置中传递参数：{path:/product,component:ProductComponent,data:[{isProd:true}]} => ActivatedRoute.data[0][isProd],在路由的配置中定义一些静态的数据(data),在路由的目标组件中通过获取数组下标，来获取参数
 - <router-outlet></router-outlet>给组件占位
 - routerlink在html中声明路由导航用的指令。<a [routerLink]="['/']">主页</a>
 参数是一个数组，而不是一个字符串。若是想传递参数，可以在后面添加
@@ -186,3 +193,11 @@ bootstrap中css样式不生效，看一下是不是版本不对
 <input type="button" value="商品详情" (click)="toProductDetails()">
 
 code404组件，如果输入不存在路由的时候，显示code404组件
+
+- ActivatedRoute：当前激活的路由对象，保存着当前路由信息，路由地址参数等
+product.component.ts中添加constructor(private routeInfo: ActivatedRoute) { }
+
+- 创建组件的时候constructor方法会被调用，ngOnInit方法会运行一次，当连续再次调用相同组件的时候不会再次执行，参数仍然保持着第一次被创建时候的值，解决方法是使用参数订阅，现在使用的方式是参数快照(this.routeInfo.snapshot快照)
+
+- 子路由
+语法：
