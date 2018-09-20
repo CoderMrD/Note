@@ -4,3 +4,7 @@
 <p>
   商品id是：{{productId}}
 </p>
+<!-- 斜杠/是找根路由，./是子路由 -->
+<a [routerLink]="['./']">商品描述</a>
+<a [routerLink]="['./seller',99]">销售员信息</a>
+<router-outlet></router-outlet>

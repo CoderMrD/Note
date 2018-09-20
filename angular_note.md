@@ -203,3 +203,18 @@ product.component.ts中添加constructor(private routeInfo: ActivatedRoute) { }
 
 - 子路由
 语法：
+
+- 辅助路由
+语法：
+主插座
+<router-outlet></router-outlet>
+辅助插座
+<router-outlet name="aux"></router-outlet>
+
+在路由中配置，在这个插座上可以显示哪些组件 （xxx和yyy）
+{path: 'xxx',component:XxxComponent,outlet:"aux"}
+{path: 'yyy',component:YyyComponent,outlet:"aux"}
+
+a标签中导航，当点Xxx的时候，主插座会导航到home组件上，辅助插座导航到xxx组件
+<a [routerLink]= "[ '/home', {outlets:{aux: 'xxx'}}]">Xxx</a>
+<a [routerLink]= "[ '/product', {outlets:{aux: 'yyy'}}]">Yyy</a>
