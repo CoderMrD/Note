@@ -199,5 +199,7 @@ product.component.ts中添加constructor(private routeInfo: ActivatedRoute) { }
 
 - 创建组件的时候constructor方法会被调用，ngOnInit方法会运行一次，当连续再次调用相同组件的时候不会再次执行，参数仍然保持着第一次被创建时候的值，解决方法是使用参数订阅，现在使用的方式是参数快照(this.routeInfo.snapshot快照)
 
+- 控制器：xxx.component.ts
+
 - 子路由
 语法：
