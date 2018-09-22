@@ -211,10 +211,17 @@ product.component.ts中添加constructor(private routeInfo: ActivatedRoute) { }
 辅助插座
 <router-outlet name="aux"></router-outlet>
 
-在路由中配置，在这个插座上可以显示哪些组件 （xxx和yyy）
+在路由中配置，在这个插座上可以显示哪些组件 （xxx和yyy），outlet控制显示在哪一个插座上，没有这个属性的都显示在主插座上
 {path: 'xxx',component:XxxComponent,outlet:"aux"}
 {path: 'yyy',component:YyyComponent,outlet:"aux"}
 
 a标签中导航，当点Xxx的时候，主插座会导航到home组件上，辅助插座导航到xxx组件
 <a [routerLink]= "[ '/home', {outlets:{aux: 'xxx'}}]">Xxx</a>
 <a [routerLink]= "[ '/product', {outlets:{aux: 'yyy'}}]">Yyy</a>
+
+实现：
+1. 在app组件的模板上在定义一个插座来显示聊天面板
+2. 单独开发一个聊天室组件只显示在新定义的插座上
+3. 通过路由参数控制新插座是否显示聊天面板
+
+## 路由守卫
