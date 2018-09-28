@@ -49,6 +49,12 @@ git commit  提交更改，实际上就是把暂存区的所有内容提交到�
 	2、please熟悉的人review
 	3、accept merge Request
 	
+合并冲突：
+1. 用代码库中的文件完全覆盖本地工作版本. 
+git reset --hard
+git pull
+
+
 merge操作，合并分支
 - git merge dev 将dev分支的更改合并到当前分支（只是当前分支，并没有同步到远程分支，所以再push一下）
 
