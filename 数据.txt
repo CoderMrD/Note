@@ -1,0 +1,150 @@
+IMM
+	ipadress：ip地址
+	user：用户
+	account_verified：已认证
+	machine_type：机器类型
+	model：型号
+	serialnumber:序列号
+	uuid
+	imm_last_discovery_date
+
+255广播ip
+note 注解，提示
+上海ip：10.240.*
+优先级: priority
+
+TVT：虚拟环境测试
+
+数据库文件lxc...,dbimm
+
+NoSQL:泛指非关系型数据库not only sql
+
+SQL server management studio
+SCOM2016
+
+BMC Discovery 显示无项目的文本路径：webroot\WebContent\common\dojost\gridx\nls\gridx.js
+body.js WebContent\common\dojost\gridx\modules\Body.js
+utility.py  webroot\bin\ras\utility.py
+
+
+解掉，复现，defalt,story
+
+open：刚打开
+working：可以解
+verify：已经上传code
+
+UT = Unit Test 单元测试
+
+story，describe
+
+1、一人一天
+2、一人半周
+3、一人一周
+5、一人两周
+
+删除MP模块:Administration,找到lenovo hardware management pack for i...m...m...,右边选择delete和import,弹出框选no
+
+7.5回退7.4：postgre是最新的，要删除换旧的
+C:\ProgramData\Lenovo里面文件删除
+C:\Users\Administrator.SCOMR2X64\AppData\Roaming删除里面的postgre
+
+
+数据库日志路径
+C:\Program Files (x86)\Lenovo\Lenovo XClarity Integrator Service\webroot\log\DBUpgrade.log
+
+	if (endpoints.length > 0)
+                    this._refreshImmGrid();
+                this._clrMsg();
+                function test(){
+                  console.log(this)
+                }
+                test();
+                console.log(this)
+                 if(!Noempty){
+                    console.time("test");
+                    console.log(this._immGrid.emptyNode.innerText)
+				    var timer = setTimeout(function(){console.log(this)}, 100);
+				    if(this._immGrid.emptyNode.innerText==nls.emptyInfo)
+				    {
+				        console.timeEnd("test");
+				        console.log(this._immGrid.emptyNode.innerText)
+				    }
+//				    this._immGrid.emptyNode.innerText=nls.emptyInfo;
+				}
+
+            });
+			
+			3389对应d3d
+			
+解defect需要填写的东西
+answer：
+	software_defect： 软件问题
+	
+	hardware_defect:  硬件问题
+	
+fix ROOT(edit)
+	causer:问题产生原因
+solution(edit):解决方式
+	
+build fixd:修复版本
+
+TVT_SCOM_IT: 10.240.199.136:8080 dest4
+TVT_SCOM_GR:10.240.199.134:8080  desk10   ok
+TVT_SCOM_SC: 10.240.199.143:8080 desk11   ok
+diskmgmt.msc：磁盘管理
+
+
+common/dojo/gridx/nls
+de 德文 
+
+gb  英文
+
+fr 法文
+
+nl 荷兰文
+
+es 西班牙文
+
+it 意大利文
+
+dk 丹麦文
+
+se 瑞典文
+
+fi 芬兰文
+
+pl 波兰文
+
+gr  希腊文
+
+ru 俄文
+
+事件管理器中的socm日志是scom本身的日志，log中是uus的日志
+scom中按钮位置bin/common/dispatch.py
+refresh的位置managemenserver.py
+
+支持的机器路径bin/config/supportsystem.json
+
+任务管理器Details中lenovoscominterface.exe同步scom数据的进程
+Thu, 20 Sep 2018 16:00:24  UIM_Server  INFO   	-  Call refreshBmc to sync bmc data.
+
+code修改：
+ if(!Noempty){
+                    now_this = this;
+				    setTimeout(function(){
+				        now_this._immGrid.emptyNode.innerText = nls.emptyInfo;
+				    }, 100);
+				}
+Noempty--->noEmpty
+     if(!Noempty){
+                    console.time("test");
+                    a = this;
+                    var c = {
+                         b:function(){
+                            a._immGrid.emptyNode.innerText = nls.emptyInfo;
+                            console.timeEnd("test");
+                        }
+                    }
+
+				    var timer = setTimeout(function(){c.b()}, 100);
+				}

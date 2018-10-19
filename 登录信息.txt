@@ -1,0 +1,110 @@
+Login vSphere Client with the following info: 
+VSphere
+MY ENV
+IP: 10.240.196.105 
+User ID: root
+Password: sys2016HEALTH
+
+win2012r2
+10.240.198.99
+user:SCOMR2X64\Administrator
+SYS2011health
+
+user:SCOMR2X64
+password:du6063825..
+
+imm：前端文件
+rest/endpoint.py
+
+PC版：打开OPERATIONS CONSOLE
+重装后X86中有scom文件
+
+文件服务器
+\\10.240.196.106              Administrator           SYS2009health
+	\\10.240.196.106\Microsoft_UIM\MSUIM6.2\HWMP
+	\\10.240.196.106\Microsoft_UIM\Microsoft\SC2012R2RTM\SC2012_R2_SCOM
+	\\10.240.196.106\Microsoft_UIM\Microsoft\SQL\en_sql_server_2012_enterprise_edition_x86_x64_dvd_813294
+
+开发机器list
+\\10.240.196.116\Data\UIM\Hardware List 	
+	
+\\10.240.196.116           remotefs                SYS2010health
+	\\10.240.196.116\Windows OS\win2012R2\WS2012R2RTM_Build9600
+
+左侧：windows computers
+右侧：discover/authenticate BMC
+      bmc
+	  
+PASSW零RD
+10.240.195.122, USERID/PASSW0RD
+10.240.193.1-10.240.193.254
+10.240.198.1-10.240.198.254
+
+网页登录URL
+https://fortrainng.scomr2x64.net:9500/ApplianceConfiguration/login.ms.html
+admin
+Passw0rd
+
+新建会议
+	右边选会议室列表，上海张江
+
+firewall account
+icelab.lenovo.com\Duch2
+MUyi123..
+
+博远服务器
+10.240.204.212
+root
+password
+
+10.240.204.13
+root
+password
+
+TVT测试服务器
+10.240.196.68
+root
+SYS2020Health
+
+windows2019
+本机账户sys2010health..
+加domain账户：
+user:SCOMR2X64\Administrator
+SYS2011health
+
+获取cpu数据code：cim/CIMInscollenction.py
+refresh: management/microsoft/servermanagement.py
+
+
+ICE-Ad
+user：duch2
+password:MUyi123..
+
+SCOM安装的时候使用远程的SQLserver
+只需要在servername\instancename中添加另一台机器的hostname即可，database名字自己起的
+(报错解决：打开提示中连接不上的服务，关闭ipv6)
+
+2012R2RTM版会出现loginsert停止工作，需要更新一下
+
+远程连接scom数据库
+注册表中查看scom连接的数据库
+regedit进入注册表-->
+HEKY_LOCAL_MACHINE-->SOFTWARE-->Microsoft-->Microsoft Operations Manager--3.0-->
+setup-->右侧DatabaseServername:data（servername）--and--Databasename:data（用的表名）
+可以右键选中点击Modify赋值data
+
+通过sql server management studio连接
+servername一致：数据表示databasename，数据过多，选中table过滤，过滤出name含有lenovo的，
+MT_Lenovo$HardwareMgmtPack$IMM2$Fan是风扇信息，其他类似
+
+远程连接uus
+通过lxc中的登录界面url，从bmc_discovery中可以看出在哪台机器上
+
+删除MP模块:Administration,找到点击management pack,然后右边有lenovo hardware management pack for i...m...m...,右边选择delete和import,弹出框选no
+
+
+hard MP ping位置：scom_mp:OOB/managementpack/lenovo.hardwaremgmtpack.imm2.v2.xml第1052行
+
+
+
+

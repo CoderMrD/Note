@@ -28,6 +28,18 @@ map() 会根据提供的函数对指定序列做映射。
 
 ## 内置函数
 
+- dict
+
+```
+has_key(k)
+D.has_key(k) --> True if D has a key k, else False 
+```
+
+- subprocess.Pope
+
+```
+可以执行cmd命令
+```
 - is
 
 ```
@@ -155,6 +167,11 @@ re.match只匹配字符串的开始，如果字符串开始不符合正则表达
 `
 os.getenv()获取一个环境变量，如果没有返回none
 `
+- os.pardir()
+
+```
+获取当前目录的父目录字符串名：('..')
+```
 
 ## sys
 - sys.argv
