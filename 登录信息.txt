@@ -108,3 +108,23 @@ hard MP pingŒª÷√£∫scom_mp:OOB/managementpack/lenovo.hardwaremgmtpack.imm2.v2.xml
 
 
 
+  try:
+            eventJson = {'classname':'Microsoft.Windows.Computer', 'targetfqdn':'EmptyFQDN', 'targetIMMClass':'Lenovo.HardwareMgmtPack.IMM2.ManagementModule', 'targetuuid': '6ECC65DD030211E79CA9FEB892CC4A20', 
+                'eventflag':'80SYS2011123fff0', 'severity':'5', 'message': '(PLAT0480, FQXSPPW0032M-0xEVNID)Numeric sensor CPU Power going low (lower critical) has asserted', 'messageId':'PING004', 'messageName':'Lower Critical sensor going low asserted', 'useRule':'No', 'cmnid':'FQXSPSE4002I'}
+        eventStr = json.dumps(eventJson)
+        logger.info(eventStr)
+        PipeClient.SendEventMessage(eventStr)
+		
+		
+		            logger.debug("$$$" *30)
+            
+            try:
+                eventJson = {'classname':'Microsoft.Windows.Computer', 'targetfqdn':'EmptyFQDN', 'targetIMMClass':'Lenovo.HardwareMgmtPack.IMM2.ManagementModule', 'targetuuid': '6ECC65DD030211E79CA9FEB892CC4A20', 
+                    'eventflag':'80SYS2011123fff0', 'severity':'5', 'message': '(PLAT0480, FQXSPPW0032M-0xEVNID)Numeric sensor CPU Power going low (lower critical) has asserted', 'messageId':'PING004', 'messageName':'Lower Critical sensor going low asserted', 'useRule':'No', 'cmnid':'FQXSPSE4002I'}
+                eventStr = json.dumps(eventJson)
+                logger.info(eventStr)
+                PipeClient.SendEventMessage(eventStr)
+            except Exception,e:
+                logger.debug(e)
+            
+            logger.debug("%%%" *30)

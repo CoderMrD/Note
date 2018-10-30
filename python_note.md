@@ -48,6 +48,7 @@ is 比较的是两个实例对象是不是完全相同，它们是不是同一�
 
 - string.atoi(s[, base]) 字符串转换成整型,base是进制，默认是10
 
+- string.atof(s)将字符串转为浮点型数字
 
 - extend()
 

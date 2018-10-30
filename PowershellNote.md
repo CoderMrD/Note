@@ -1,3 +1,5 @@
+python运行上一级目录中的文件：python "..\xxx.py"
+
 @()创建数组
 @{}创建哈希表
 单双引号可以用@''@引用。
@@ -67,6 +69,45 @@ et-ExecutionPolicy 可更改 Windows PowerShell 执行策略的用户首选项�
 Unrestricted：加载所有配置文件并运行所有脚本
 
 
+Param(
+  [Parameter(Mandatory=$true,HelpMessage='class name')][string]$classname
+)
+输入参数，提示信息是'class name'，存为classname变量，Mandatory=$true设置为强制参数
 
+ Add-Type:
+ 用途
+    添加一个新的.NET类型到当前会话中去。支持C#,vb,javascript,dll...
+ 例子1，通过代码添加新类型
+         C:/PS>$source = @"
+    public class BasicTest
+    {
+        public static int Add(int a, int b)
+        {
+            return (a + b);
+        }
+    
+        public int Multiply(int a, int b)
+        {
+            return (a * b);
+        }
+    }
+    "@
+    
+    C:/PS> Add-Type -TypeDefinition $source
 
+    C:/PS> [BasicTest]::Add(4, 3)  
+    
+    C:/PS> $basicTestObject = New-Object BasicTest 
+    C:/PS> $basicTestObject.Multiply(5, 2)
+将一段代码作为一种类型添加到当前会话当中去。
+
+Add-Type [-TypeDefinition] <string> [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>] [-language {<CSharp> | <CSharpVersion3> | <VisualBasic> | <JScript>}] [-OutputAssembly <string>] [-OutputType <OutputAssemblyType>] [-ReferencedAssemblies <string[]>] [-IgnoreWarnings] [-PassThru] [<CommonParameters>]
+
+-language: 指定在源代码中使用的语言。Add-Type 使用该语言来选择正确的代码编译器,默认是CSharp
+
+- ReferencedAssemblies <string[]>
+指定类型所依赖的程序集。默认情况下，Add-Type 引用 System.dll 和 System.Management.Automation.dll。除默认程序集以外，还会引用使用此参数指定的程序集
+
+-TypeDefinition <string>
+指定包含类型定义的源代码。输入字符串或 here-string 格式的源代码，或输入包含源代码的变量。有关 here-string 的详细信息，请参阅 about_Quoting_Rules。
 

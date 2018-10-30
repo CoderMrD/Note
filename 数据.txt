@@ -52,27 +52,6 @@ C:\Users\Administrator.SCOMR2X64\AppData\Roaming删除里面的postgre
 数据库日志路径
 C:\Program Files (x86)\Lenovo\Lenovo XClarity Integrator Service\webroot\log\DBUpgrade.log
 
-	if (endpoints.length > 0)
-                    this._refreshImmGrid();
-                this._clrMsg();
-                function test(){
-                  console.log(this)
-                }
-                test();
-                console.log(this)
-                 if(!Noempty){
-                    console.time("test");
-                    console.log(this._immGrid.emptyNode.innerText)
-				    var timer = setTimeout(function(){console.log(this)}, 100);
-				    if(this._immGrid.emptyNode.innerText==nls.emptyInfo)
-				    {
-				        console.timeEnd("test");
-				        console.log(this._immGrid.emptyNode.innerText)
-				    }
-//				    this._immGrid.emptyNode.innerText=nls.emptyInfo;
-				}
-
-            });
 			
 			3389对应d3d
 			
@@ -128,23 +107,27 @@ refresh的位置managemenserver.py
 任务管理器Details中lenovoscominterface.exe同步scom数据的进程
 Thu, 20 Sep 2018 16:00:24  UIM_Server  INFO   	-  Call refreshBmc to sync bmc data.
 
-code修改：
- if(!Noempty){
-                    now_this = this;
-				    setTimeout(function(){
-				        now_this._immGrid.emptyNode.innerText = nls.emptyInfo;
-				    }, 100);
-				}
-Noempty--->noEmpty
-     if(!Noempty){
-                    console.time("test");
-                    a = this;
-                    var c = {
-                         b:function(){
-                            a._immGrid.emptyNode.innerText = nls.emptyInfo;
-                            console.timeEnd("test");
-                        }
-                    }
+uus的code中bin/managementplatform/microsoft/inseteventtoconsole.ps1调用了scom的接口，将event插入数据库，当scom发现数据库中数据多了就会将event根据monitor展示出来（此行可能有问题）
 
-				    var timer = setTimeout(function(){c.b()}, 100);
-				}
+现在uus发送event，通过给一个exe传递进去参数就可以了，scom那边的monitor要对应
+
+模拟envent工具
+启动：./ipmitool.exe -I lanplus -H $ip -U USERID -P PASSW0RD shell
+查看 sensor（传感器）列表：sensor list
+查看state：event "CPU1 VOLT" list
+添加事件： event sensorid state envent_dir
+eg:		   event "CPU1 VOLT" lnr assert/deassert
+
+收集硬件信息：bin/cim/ciminscollection.py
+
+Param(
+  [Parameter(Mandatory=$true,HelpMessage='class name')][string]$classname,   		  Microsoft.Windows.Computer
+  [Parameter(Mandatory=$true,HelpMessage='targetfqdn')][string]$targetfqdn,   		  EmptyFQDN
+  [Parameter(Mandatory=$true,HelpMessage='targetfqdn')][string]$targetIMMClass,       Lenovo.HardwareMgmtPack.IMM2.ManagementModule
+  [Parameter(Mandatory=$true,HelpMessage='targetuuid')][string]$targetuuid,			  A59B4DD06E4C46C8A41E5CF6D6EC7E40   
+  [Parameter(Mandatory=$true,HelpMessage='eventflag')][string]$eventflag,      		  800102031502ffff0(就是eventID) 80SYS2011123fff0
+  [Parameter(Mandatory=$true,HelpMessage='messageID')][string]$severity,     		  5
+  [Parameter(Mandatory=$true,HelpMessage='message')][string]$message,                 (PLAT0480, FQXSPPW0032M-0xEVNID)Numeric sensor CPU Power going low (lower critical) has asserted.
+  [Parameter(Mandatory=$true,HelpMessage='messageId')][string]$messageId,			   PLAT0480     PING004
+  [Parameter(Mandatory=$true,HelpMessage='messageName')][string]$messageName  		   Lower Critical sensor going low asserted
+)
