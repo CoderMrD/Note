@@ -37,10 +37,11 @@ UT = Unit Test µ¥Ôª²âÊÔ
 
 story£¬describe
 
-1¡¢Ò»ÈËÒ»Ìì
-2¡¢Ò»ÈË°ëÖÜ
-3¡¢Ò»ÈËÒ»ÖÜ
-5¡¢Ò»ÈËÁ½ÖÜ
+1¡¢Ò»Ìì
+2¡¢°ëÖÜ
+3¡¢Ò»ÖÜ
+5¡¢Á½ÖÜ
+8¡¢ÈıÖÜ
 
 É¾³ıMPÄ£¿é:Administration,ÕÒµ½lenovo hardware management pack for i...m...m...,ÓÒ±ßÑ¡ÔñdeleteºÍimport,µ¯³ö¿òÑ¡no
 
@@ -48,11 +49,9 @@ story£¬describe
 C:\ProgramData\LenovoÀïÃæÎÄ¼şÉ¾³ı
 C:\Users\Administrator.SCOMR2X64\AppData\RoamingÉ¾³ıÀïÃæµÄpostgre
 
-
 Êı¾İ¿âÈÕÖ¾Â·¾¶
 C:\Program Files (x86)\Lenovo\Lenovo XClarity Integrator Service\webroot\log\DBUpgrade.log
 
-			
 			3389¶ÔÓ¦d3d
 			
 ½âdefectĞèÒªÌîĞ´µÄ¶«Î÷
@@ -111,6 +110,8 @@ uusµÄcodeÖĞbin/managementplatform/microsoft/inseteventtoconsole.ps1µ÷ÓÃÁËscomµÄ½
 
 ÏÖÔÚuus·¢ËÍevent£¬Í¨¹ı¸øÒ»¸öexe´«µİ½øÈ¥²ÎÊı¾Í¿ÉÒÔÁË£¬scomÄÇ±ßµÄmonitorÒª¶ÔÓ¦
 
+ÔÚÍ¬Ò»¸ö×éÀïÃæµÄscom¹«ÓÃÒ»¸ösql serverÊı¾İ¿â
+
 Ä£Äâenvent¹¤¾ß
 Æô¶¯£º./ipmitool.exe -I lanplus -H $ip -U USERID -P PASSW0RD shell
 ²é¿´ sensor£¨´«¸ĞÆ÷£©ÁĞ±í£ºsensor list
@@ -119,6 +120,14 @@ uusµÄcodeÖĞbin/managementplatform/microsoft/inseteventtoconsole.ps1µ÷ÓÃÁËscomµÄ½
 eg:		   event "CPU1 VOLT" lnr assert/deassert
 
 ÊÕ¼¯Ó²¼şĞÅÏ¢£ºbin/cim/ciminscollection.py
+
+
+pingÃüÁî
+ping 192.168.0.1 -w 1000 -t 
+
+-t ÊÇÒ»Ö±PING£¬£¬
+
+-w 1000 ÉèÖÃ³¬Ê±ÎªÒ»Ãë
 
 Param(
   [Parameter(Mandatory=$true,HelpMessage='class name')][string]$classname,   		  Microsoft.Windows.Computer

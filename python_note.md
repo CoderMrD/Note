@@ -208,7 +208,13 @@ run() 方法并不启动一个新线程，就是在主线程中调用了一个�
 想启动多线程，就必须使用start()方法。
 `
 
-- threading.current_thread().name  
+- threading.time(interval, function, args=[], kwargs={})
+
+`
+threading的派生类，可以用来定时任务，如果要重复执行某个任务，可以在function中再定义一个threading.time()
+`
+
+- threading.current_thread().name  （或者threading.current_thread().getName()）
 
 `
 线程名，只是一个标识符，可以使用getName()、setName()获取和运行时重命名。

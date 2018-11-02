@@ -114,8 +114,6 @@ hard MP pingÎ»ÖÃ£ºscom_mp:OOB/managementpack/lenovo.hardwaremgmtpack.imm2.v2.xml
         eventStr = json.dumps(eventJson)
         logger.info(eventStr)
         PipeClient.SendEventMessage(eventStr)
-		
-		
 		            logger.debug("$$$" *30)
             
             try:
@@ -128,3 +126,16 @@ hard MP pingÎ»ÖÃ£ºscom_mp:OOB/managementpack/lenovo.hardwaremgmtpack.imm2.v2.xml
                 logger.debug(e)
             
             logger.debug("%%%" *30)
+			
+UnhealthyPlat>PING0004</UnhealthyPlat>
+          <HealthyPlat>PING0005</HealthyPlat>
+          <Identifier>SYS2011</Identifier>
+        </Configuration>
+			
+{'messageName': u'Lower Critical sensor going low asserted', 'cmnid': u'FQXSPPW0032M', 'classname': 'Microsoft.Windows.Computer', 'eventflag': u'800102031502ffff0', 'message': u'(PLAT0480, FQXSPPW0032M-0xEVNID)Numeric sensor CPU Power going low (lower critical) has asserted.', 'severity': '5', 'targetuuid': u'A59B4DD06E4C46C8A41E5CF6D6EC7E40>10.240.198.48', 'targetfqdn': 'EmptyFQDN', 'messageId': u'PLAT0480', 'useRule': 'No', 'targetIMMClass': 'Lenovo.HardwareMgmtPack.IMM2.ManagementModule'}
+
+{'messageName': u'Bus Timeout Recovered', 'cmnid': u'FQXSPIO2004I', 'classname': 'Microsoft.Windows.Computer', 'eventflag': u'816f01132581ffff0', 'message': u'(PLAT0225, FQXSPIO2004I-0xEVNID)Bus DIMMs has recovered from a bus timeout.', 'severity': '2', 'targetuuid': u'A59B4DD06E4C46C8A41E5CF6D6EC7E40>10.240.198.48', 'targetfqdn': 'EmptyFQDN', 'messageId': u'PLAT0225', 'useRule': 'No', 'targetIMMClass': 'Lenovo.HardwareMgmtPack.IMM2.ManagementModule'}
+
+{'messageName': u'Bus Timeout', 'cmnid': u'FQXSPIO0004L', 'classname': 'Microsoft.Windows.Computer', 'eventflag': u'806f01132581ffff0', 'message': u'(PLAT0224, FQXSPIO0004L-0xEVNID)A bus timeout has occurred on bus DIMMs.', 'severity': '5', 'targetuuid': u'A59B4DD06E4C46C8A41E5CF6D6EC7E40>10.240.198.48', 'targetfqdn': 'EmptyFQDN', 'messageId': u'PLAT0224', 'useRule': 'No', 'targetIMMClass': 'Lenovo.HardwareMgmtPack.IMM2.ManagementModule'}
+{'messageName': u'Bus Timeout', 'cmnid': u'FQXSPIO0004L', 'classname': 'Microsoft.Windows.Computer', 'eventflag': u'806f01132581ffff0', 'message': u'(PLAT0224, FQXSPIO0004L-0xEVNID)A bus timeout has occurred on bus DIMMs.', 'severity': '5', 'targetuuid': u'9B329312EC8A11E7973B0A94EF553B5D>10.240.193.204', 'targetfqdn': 'EmptyFQDN', 'messageId': u'PLAT0224', 'useRule': 'No', 'targetIMMClass': 'Lenovo.HardwareMgmtPack.IMM2.ManagementModule'}
+{'messageName': u'Software NMI', 'cmnid': u'FQXSPIO0006N', 'classname': 'Microsoft.Windows.Computer', 'eventflag': u'806f03132581ffff0', 'message': u'(PLAT0228, FQXSPIO0006N-0xEVNID)A software NMI has occurred on system ThinkSystem SD530.', 'severity': '5', 'targetuuid': u'9B329312EC8A11E7973B0A94EF553B5D>10.240.193.204', 'targetfqdn': 'EmptyFQDN', 'messageId': u'PLAT0228', 'useRule': 'No', 'targetIMMClass': 'Lenovo.HardwareMgmtPack.IMM2.ManagementModule'}
