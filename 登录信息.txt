@@ -26,7 +26,7 @@ PC版：打开OPERATIONS CONSOLE
 	\\10.240.196.106\Microsoft_UIM\Microsoft\SQL\en_sql_server_2012_enterprise_edition_x86_x64_dvd_813294
 
 开发机器list
-\\10.240.196.116\Data\UIM\Hardware List 	
+\\10.240.196.116\Data\UIM\Hardware List
 	
 \\10.240.196.116           remotefs                SYS2010health
 	\\10.240.196.116\Windows OS\win2012R2\WS2012R2RTM_Build9600

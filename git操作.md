@@ -54,6 +54,8 @@ git commit  提交更改，实际上就是把暂存区的所有内容提交到�
 git reset --hard
 git pull
 
+本地分支关联远程分支（切换到想关联的本地分支）
+git branch --set-upstream debug origin/test
 
 merge操作，合并分支
 - git merge dev 将dev分支的更改合并到当前分支（只是当前分支，并没有同步到远程分支，所以再push一下）
@@ -64,6 +66,10 @@ merge操作，合并分支
 1、git rm --cached -r 文件夹
 2、git commit -m "说明"
 3、git push
+
+
+git fetch   运行 git fetch，可以将远程分支信息获取到本地
+git checkout -b local-branchname origin/remote_branchname   将远程分支remote_branchname映射到本地命名为local-branchname 的一分支。 
 
 在使用git命令的时候，后面可能会带有参数，有些参数前面是单横杠有些是双横杠。
 下面就简单介绍一下两种横杠的使用场景。

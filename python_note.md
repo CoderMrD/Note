@@ -208,7 +208,7 @@ run() 方法并不启动一个新线程，就是在主线程中调用了一个�
 想启动多线程，就必须使用start()方法。
 `
 
-- threading.time(interval, function, args=[], kwargs={})
+- threading.Timer(interval, function, args=[], kwargs={})
 
 `
 threading的派生类，可以用来定时任务，如果要重复执行某个任务，可以在function中再定义一个threading.time()
@@ -232,6 +232,12 @@ threading的派生类，可以用来定时任务，如果要重复执行某个�
 返回线程是否存活，布尔值，True或False。
 `
 
+- threading.active_count()
+
+`
+返回当前活跃的Thread对象数量。返回值和通过enumerate()返回的列表长度是相等的。
+`
+
 - join([timeout])方法
 
 `threading.Thread.join。主线程A中，创建了子线程B，并且在主线程A中调用了B.join()，那么，主线程A会在调用的地方等待，直到子线程B完成操作后，才可以接着往下执行，那么在调用这个线程时可以使用被调用线程的join方法。
@@ -244,6 +250,10 @@ join（）的作用是，在子线程完成运行之前，这个子线程的父�
 `
 主线程A中，创建了子线程B，并且在主线程A中调用了B.setDaemon(),这个的意思是，把主线程A设置为守护线程，这时候，要是主线程A执行结束了，就不管子线程B是否完成,一并和主线程A退出.这就是setDaemon方法的含义，这基本和join是相反的。此外，还有个要特别注意的：必须在start() 方法调用之前设置，如果不设置为守护线程，程序会被无限挂起。
 `
+## 浮点数比较大小
+
+- math.isclose(a,b,abs_tol=0.0001)
+求差然后求绝对值，如果小于误差那么判断相等
 
 ## json
 - json.dumps()
