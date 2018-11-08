@@ -38,7 +38,7 @@ D.has_key(k) --> True if D has a key k, else False
 - subprocess.Pope
 
 ```
-可以执行cmd命令
+产生子进程，可以执行cmd命令
 ```
 - is
 

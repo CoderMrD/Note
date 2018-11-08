@@ -16,6 +16,14 @@ $stu=@{ Name = "小明";Age="12";sex="男";Books="三国演义","围城","哈姆
 IndexOf()	返回第一次匹配的所索引	(“Hello”).IndexOf(“l”)
 匹配到返回0，匹配不到返回-1
 
+a.gettype().name
+获取a的类型名称
+
+Write-Host：自定义输出内容
+
+$args返回所有的参数
+传递给一个函数或者一个脚本的参数都保存在$args变量中
+
 Powershell使用-F方法带入数据
 封闭在双引号中的字符串能够直接使用变量，这是常用的手法，但是只能获取变量本身而不能获取变量属性
 $name = $host.Name
