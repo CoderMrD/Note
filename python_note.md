@@ -35,11 +35,26 @@ has_key(k)
 D.has_key(k) --> True if D has a key k, else False 
 ```
 
-- subprocess.Pope
+### subrocess
+
+- subprocess.Pope(args,stdin=None, stdout=None, stderr=None,shell=False)
 
 ```
-产生子进程，可以执行cmd命令
+产生子进程,并连接到子进程的标准输入/输出/错误中去，还可以得到子进程的返回值
 ```
+
+- subprocess.PIPE
+
+```
+一个可以被用于Popen的stdin、stdout 和stderr 3个参数的特输值，表示需要创建一个新的管道
+```
+
+- Pope.communicate()
+
+```
+参数是标准输入，返回标准输出和标准错误：stdout, stderr = Pope.communicate()
+```
+
 - is
 
 ```
