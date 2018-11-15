@@ -24,3 +24,13 @@ con.eat()
      以单下划线开头（_foo）的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用“from xxx import *”而导入；以双下划线开头的（__foo）代表类的私有成员；以双下划线开头和结尾的（__foo__）代表python里特殊方法专用的标识，如 __init__（）代表类的构造函数。目的就是以防子类意外重写基类的方法或者属性,私有变量和保护变量的作用域被设定在本模块内，虽然可以访问但是不建议访问。
 
 命名：类，大驼峰，方法：小驼峰
+
+分页：
+s = "0123456789"
+pageSize = 3
+pageCount = (len(s)-1)/pageSize + 1
+if len(s) > pageSize:
+    for currentPage in range(1,pageCount+1):
+        begin = (currentPage-1)*pageSize
+        end = currentPage * pageSize
+        print s[begin:end]

@@ -1,6 +1,15 @@
 Base：dojo的内核，保存于dojo.js
 dojo.js包含进页面内，可以自动导入dojo的基本组件。
 
+dojo widget:简单来说，就是一个dom结点
+data-dojo-type:用来声明dojo widget类型
+
+lang.hitch()指定一个上下文对象和一个函数
+
+registry.byId 和 dom.byId 经常混淆, 尤其是初次使用者。
+registry.byId 应当用于： 当你想直接引用某个部件的JavaScript对象以及访问这个部件的方法时。
+dom.byId 应当用于：当你想直接访问一个DOM节点。
+
 区分base和dojo.js???
 
 constructor初始化dojo类的属性

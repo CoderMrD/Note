@@ -19,6 +19,9 @@ IndexOf()	返回第一次匹配的所索引	(“Hello”).IndexOf(“l”)
 a.gettype().name
 获取a的类型名称
 
+str.length
+获取字符串长度
+
 Write-Host：自定义输出内容
 
 $args返回所有的参数
