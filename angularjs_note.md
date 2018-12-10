@@ -1,4 +1,7 @@
 ### angularjs入门
+- 单向绑定：值从模型中取得。
+- 双向绑定：模型（数据）用于生成元素，元素中的变化也能引起模型中相应的变化。
+
 1. ng-app=" "  定义angularJS的使用范围；（在html中定义就作用于整个DOM，如果和其他框架混用，可能会出问题，这时候可以在某个div中使用）
 
 2. ng-init="变量=值;变量='值'"  初始化变量的值，有多个变量时，中间用分号隔开；
@@ -20,4 +23,5 @@
 - ng-repeat 遍历,属性格式<name> in <collection>
 angularjs 弹出框 $modal
 
+- angular.forEach()
 $开头的变量名表示angularjs提供的内置特性。
