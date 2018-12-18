@@ -257,7 +257,8 @@ threading的派生类，可以用来定时任务，如果要重复执行某个�
 
 `threading.Thread.join。主线程A中，创建了子线程B，并且在主线程A中调用了B.join()，那么，主线程A会在调用的地方等待，直到子线程B完成操作后，才可以接着往下执行，那么在调用这个线程时可以使用被调用线程的join方法。
 里面的参数时可选的，代表线程运行的最大时间，即如果超过这个时间，不管这个此线程有没有执行完毕都会被回收，然后主线程或函数都会接着执行的。
-join（）的作用是，在子线程完成运行之前，这个子线程的父线程将一直被阻塞。
+join（）的作用是，在子线程完成运行之前，这个子线程的父线程将一直被阻塞,设置为None则等待子进程执行完毕
+
 `
 
 - setDaemon()方法
@@ -269,6 +270,14 @@ join（）的作用是，在子线程完成运行之前，这个子线程的父�
 
 - math.isclose(a,b,abs_tol=0.0001)
 求差然后求绝对值，如果小于误差那么判断相等
+
+## 文件读写
+- write:写入单个变量，如果要换行，加入\n
+- writelines：写入多个变量，用[]表示
+二者都只能写字符串，如果要传入其他的，必须转成字符串
+with open as f:
+    f.write()
+a为追加方式写
 
 ## json
 - json.dumps()
@@ -286,6 +295,11 @@ join（）的作用是，在子线程完成运行之前，这个子线程的父�
 - 如果要处理的是文件而不是字符串，可以使用 json.dump() 和 json.load() 来编码和解码JSON数据。
 
 ## 数据库
+
+### 原始操作
+要操作关系数据库，首先需要连接到数据库，一个数据库连接称为Connection；
+连接到数据库后，需要打开游标，称之为Cursor，通过Cursor执行SQL语句，然后，获得执行结果。
+
 ### SQLAlchemy
 orm
 - engine = create_engine()用来初始化数据库连接。SQLAlchemy用一个字符串表示连接信息：
@@ -293,6 +307,12 @@ orm
 eg:   'mysql+mysqlconnector://root:password@localhost:3306/test'
 - 创建DBSession类型:
 DBSession = sessionmaker(bind=engine)
+# 创建Session:
+session = DBSession()
+# 创建Query查询，filter是where条件，最后调用one()返回唯一行，如果调用all()则返回所有行:
+user = session.query(User).filter(User.id=='5').one()
+# 删除操作
+delete中添加synchronize_session = False参数，表示删除时不进行同步，只删除内存中的，不commit不同步到硬盘里面的数据库
 
 ## javascript
 

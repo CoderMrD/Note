@@ -121,22 +121,19 @@ eg:		   event "CPU1 VOLT" lnr assert/deassert
 
 收集硬件信息：bin/cim/ciminscollection.py
 
+1.
+C:\Program Files (x86)\Lenovo\Lenovo XClarity Integrator Service
+C:\Program Files\Lenovo\Lenovo Hardware Management Pack
+打包压缩
 
-ping命令
-ping 192.168.0.1 -w 1000 -t 
+2.
+运行环境跑命令
+10.104.197.189  .\msuim $SYS2015health@
+在cmd中运行
+C:\jenkins\workspace\HWMP\scom_mp\build\buildcov.bat
 
--t 是一直PING，，
+网站看结果
+coverity.icelab.lenovo.com 
 
--w 1000 设置超时为一秒
-
-Param(
-  [Parameter(Mandatory=$true,HelpMessage='class name')][string]$classname,   		  Microsoft.Windows.Computer
-  [Parameter(Mandatory=$true,HelpMessage='targetfqdn')][string]$targetfqdn,   		  EmptyFQDN
-  [Parameter(Mandatory=$true,HelpMessage='targetfqdn')][string]$targetIMMClass,       Lenovo.HardwareMgmtPack.IMM2.ManagementModule
-  [Parameter(Mandatory=$true,HelpMessage='targetuuid')][string]$targetuuid,			  A59B4DD06E4C46C8A41E5CF6D6EC7E40   
-  [Parameter(Mandatory=$true,HelpMessage='eventflag')][string]$eventflag,      		  800102031502ffff0(就是eventID) 80SYS2011123fff0
-  [Parameter(Mandatory=$true,HelpMessage='messageID')][string]$severity,     		  5
-  [Parameter(Mandatory=$true,HelpMessage='message')][string]$message,                 (PLAT0480, FQXSPPW0032M-0xEVNID)Numeric sensor CPU Power going low (lower critical) has asserted.
-  [Parameter(Mandatory=$true,HelpMessage='messageId')][string]$messageId,			   PLAT0480     PING004
-  [Parameter(Mandatory=$true,HelpMessage='messageName')][string]$messageName  		   Lower Critical sensor going low asserted
-)
+3.
+软件中ping环境的ip:8080
