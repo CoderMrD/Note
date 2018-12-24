@@ -131,9 +131,10 @@ C:\Program Files\Lenovo\Lenovo Hardware Management Pack
 10.104.197.189  .\msuim $SYS2015health@
 在cmd中运行
 C:\jenkins\workspace\HWMP\scom_mp\build\buildcov.bat
-
 网站看结果
-coverity.icelab.lenovo.com 
+coverity.icelab.lenovo.com:8080
+itcode
+password
 
 3. arachni scan
 软件中ping环境的ip:8080
@@ -145,3 +146,10 @@ Arachni scan：
 2. 删除提示
 
 bug:discovery之后的BMC数量和刷新后的数量不一致
+
+spring9: 
+auto-discovery
+os :scom ==> os ==> bmc --生成账户密码，返回给os，到scom
+code_scom_mp\Server\MgmtPack\Lenovo.HardwareMgmtPack.HardwareIDs.xml  Lenovo.HardwareMgmtPack.AutoOOB.Discovery
+code_uus\UnifiedService\unified_service\tools\Lenovo.LXCI.UusService\LenovoScomInterface
+code_uus\UnifiedService\unified_service\backend\webroot\bin\ManagementPlatform\microsoft\BmcAutoDiscovery.py
