@@ -121,12 +121,12 @@ eg:		   event "CPU1 VOLT" lnr assert/deassert
 
 收集硬件信息：bin/cim/ciminscollection.py
 
-1.
+1. postecode scan
 C:\Program Files (x86)\Lenovo\Lenovo XClarity Integrator Service
 C:\Program Files\Lenovo\Lenovo Hardware Management Pack
 打包压缩
 
-2.
+2. Coverity scan
 运行环境跑命令
 10.104.197.189  .\msuim $SYS2015health@
 在cmd中运行
@@ -135,7 +135,13 @@ C:\jenkins\workspace\HWMP\scom_mp\build\buildcov.bat
 网站看结果
 coverity.icelab.lenovo.com 
 
-3.
+3. arachni scan
 软件中ping环境的ip:8080
-
 Arachni scan：
+
+
+多语言：
+1. bmc discovery 界面，BMC状态
+2. 删除提示
+
+bug:discovery之后的BMC数量和刷新后的数量不一致
