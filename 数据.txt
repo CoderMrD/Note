@@ -150,6 +150,11 @@ bug:discovery之后的BMC数量和刷新后的数量不一致
 spring9: 
 auto-discovery
 os :scom ==> os ==> bmc --生成账户密码，返回给os，到scom
-code_scom_mp\Server\MgmtPack\Lenovo.HardwareMgmtPack.HardwareIDs.xml  Lenovo.HardwareMgmtPack.AutoOOB.Discovery
+code_scom_mp\Server\MgmtPack\Lenovo.HardwareMgmtPack.xSystem.xml  IBMAutoDiscovery.ps1 Lenovo.HardwareMgmtPack.AutoOOB.Discovery
 code_uus\UnifiedService\unified_service\tools\Lenovo.LXCI.UusService\LenovoScomInterface
 code_uus\UnifiedService\unified_service\backend\webroot\bin\ManagementPlatform\microsoft\BmcAutoDiscovery.py
+
+autodiscovery
+administration-->左边monitoring上面有discovery wizard,点击，windows computer
+auto-discovery中添加的时候报错
+Windows Installer 日志文件“C:\Program Files\Microsoft System Center 2016\Operations Manager\Server\AgentManagement\AgentLogs\DUCHMOMAgentMgmt.log

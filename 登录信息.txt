@@ -57,10 +57,6 @@ MUyi123..
 root
 password
 
-10.240.204.13
-root
-password
-
 TVT²âÊÔ·þÎñÆ÷
 10.240.196.68
 root
