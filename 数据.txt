@@ -144,7 +144,7 @@ Arachni scan：
 多语言：
 1. bmc discovery 界面，BMC状态
 2. 删除提示
-
+scom 多语言位置：D:\code_scom_mp\OOB\IBM.SysMgmt.Common.NLS\Language
 bug:discovery之后的BMC数量和刷新后的数量不一致
 
 spring9: 

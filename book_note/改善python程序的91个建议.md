@@ -128,9 +128,12 @@ x,y = y,x在内存中执行顺序如下：
 
 - dis，分析函数字节码。eg：dis.dis(add)
 ```
- 2           0 LOAD_FAST                0 (a)
+ 2            0 LOAD_FAST                0 (a)
               2 LOAD_FAST                1 (b)
               4 BINARY_ADD
               6 RETURN_VALUE
 # 第一列数字代表源代码中的行数，第二列数字是字节码的索引，第三列是指令本身对应的人可读的名字，第四列是指令的参数，第五列是计算后的实际参数
 ```
+
+### 建议10：充分利用Lazy evaluation（延迟计算、惰性计算）的特性
+1）避免不必要的计算

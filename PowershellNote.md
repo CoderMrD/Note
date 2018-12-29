@@ -36,6 +36,8 @@ $name = $host.Name
 
 Get-Content读取文本文件
 
+Get-ItemProperty:cmdlet 获取指定项的属性
+
 Remove-Item 删除一个或多个项。由于许多提供程序都支持它，因此它可以删除多种不同类型的项，其中包括文件、目录、注册表项、变量、别名和函数。可以删除文件
 
 Foreach 语句（也称为 Foreach 循环）是一种用于逐一遍历（循环访问）项集合中一系列值的语言
