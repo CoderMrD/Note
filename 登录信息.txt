@@ -99,3 +99,6 @@ MT_Lenovo$HardwareMgmtPack$IMM2$Fan是风扇信息，其他类似
 删除MP模块:Administration,找到点击management pack,然后右边有lenovo hardware management pack for i...m...m...,右边选择delete和import,弹出框选no
 
 duch2.scomr2x64.net
+
+做build http://10.240.196.207:8080/view/SCOM/job/HWMP/
+点击左边Build with Parameters

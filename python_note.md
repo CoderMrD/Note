@@ -35,6 +35,21 @@ has_key(k)
 D.has_key(k) --> True if D has a key k, else False 
 ```
 
+- getattr
+
+```python
+# getattr() 函数用于返回一个对象属性值。
+# 也可以用于对象里面找方法
+```
+
+- callable(object)
+
+```
+1. 方法用来检测对象是否可被调用，可被调用指的是对象能否使用()括号的方法调用。
+2. 可调用对象，在实际调用也可能调用失败；但是不可调用对象，调用肯定不成功。
+3. 类对象都是可被调用对象，类的实例对象是否可调用对象，取决于类是否定义了__call__方法。
+```
+
 ### subrocess
 
 - subprocess.Pope(args,stdin=None, stdout=None, stderr=None,shell=False)
