@@ -50,6 +50,10 @@ D.has_key(k) --> True if D has a key k, else False
 3. 类对象都是可被调用对象，类的实例对象是否可调用对象，取决于类是否定义了__call__方法。
 ```
 
+- islice
+from itertools import islice
+islice(seq[, start], stop[, step]);返回序列seq的从start开始到stop结束的步长为step的元素的迭代器islice(seq[, start], stop[, step])
+
 ### subrocess
 
 - subprocess.Pope(args,stdin=None, stdout=None, stderr=None,shell=False)
