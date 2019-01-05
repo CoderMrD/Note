@@ -137,4 +137,17 @@ x,y = y,x在内存中执行顺序如下：
 ```
 
 ### 建议10：充分利用Lazy evaluation（延迟计算、惰性计算）的特性
-1）避免不必要的计算
+1）避免不必要的计算，带来性能上的提升。如if x and y，如果x为false，则y就不再计算，变成中应充分利用这个特性。
+2）节省空间，使得无限循环的数据结构成为可能。Python中最经典使用的例子就是生成器表达式了，每次许要计算的时候才通过yield产生所需要的元素。如斐波那契数列
+```python
+def fib():
+	a, b = 0, 1
+	while True:
+		yield a
+		a, b = b, a+b
+from itertools import islice
+print list(islice(fib(),5))
+[0,1,2,3]
+```
+
+###  建议枚举替代实现的缺陷
