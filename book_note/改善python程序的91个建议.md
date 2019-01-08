@@ -189,6 +189,40 @@ if type(a) is types.ListType:
 2)python2.7中，古典类(不由任意内置类型派生出的类)的实例返回的都是<type'instance'>
 
 ### 建议13：尽量转换为浮点类型后再做除法
+python当除法运算中两个操作数都为整数的时候，其返回值也是整数，运算结果将直接截断（非四舍五入）
+如果对计算精度要求比较高，可以使用Decimal来进行处理或者将浮点数尽量扩大为整数，计算完毕后再转换回去。
+
+### 建议14：警惕eval()安全漏洞
+eval()将字符串str当成有效的表达式来求值并返回计算结果。
+eval(expression[, globals[, locals]])
+可能会被黑客输入命令直接处理。
+
+### 建议15：使用enumerate()获取序列迭代的索引和值
+字典除外，字典适合用for key, value in dict.iteritems()
+
+### 建议16：分清==与is
+==是判断值，is是判断id
+
+### 建议17：考虑兼容性，尽可能使用Unicode（限于python2）
+python2 Unicode(字符串加上u)对应于python3 str
+python2 str 对应于python3 byte
+utf8在windows系统中被映射为GBK编码，所以当控制台上直接显示utf8时，两种编码不兼容，以UTF8形式表示的编码在GBK编码中被解释为其他的符号而产生乱码。要解决乱码问题可以使用Unicode作为中间介质来完成转换。首先对读入的字符用UTF-8解码（decode），然后用GBK进行编码。
+python中默认编码是ASCII，可以在首行对指定源文件进行编码声明
+```python
+# -*- coding: <encoding name> -*-
+```
+
+### 建议18：构建合理的包层次来管理module
+简单地说包就是目录，除了包含模块(python文件)外，还包含一个__init__.py
+Package/ __init__.py
+    Module1.py
+    Module2.py
+    subpackage/__init__.py
+        Module1.py
+        Module2.py
+包中的模块可以通过 . 访问符进行访问，即包名.模块名
+
+
 
 
 
