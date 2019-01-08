@@ -36,7 +36,10 @@ $name = $host.Name
 
 Get-Content读取文本文件
 
-Get-ItemProperty:cmdlet 获取指定项的属性
+Get-ItemProperty:cmdlet 获取指定项的属性,还可以使用 Get-ItemProperty 来查看注册表条目及其值。
+eg:获取注册表信息
+ Get-RegistryValue 'HKLM:\SOFTWARE\Lenovo\Lenovo SCOM MP\Debug' 'Level'
+ HKLM：注册表中HKEY_LOCAL_MACHINE
 
 Remove-Item 删除一个或多个项。由于许多提供程序都支持它，因此它可以删除多种不同类型的项，其中包括文件、目录、注册表项、变量、别名和函数。可以删除文件
 
@@ -124,3 +127,16 @@ Add-Type [-TypeDefinition] <string> [-CodeDomProvider <CodeDomProvider>] [-Compi
 -TypeDefinition <string>
 指定包含类型定义的源代码。输入字符串或 here-string 格式的源代码，或输入包含源代码的变量。有关 here-string 的详细信息，请参阅 about_Quoting_Rules。
 
+- Test-Path cmdlet 确定路径的所有元素是否存在。如果所有元素都存在，它将返回 True ($true)；如果缺少任一元素，则返回 False ($false)。
+
+- New-Item cmdlet 创建新项并设置该项的值。可创建项的类型取决于该项所在位置。例如，在文件系统中，New-Item 用于创建文件和文件夹。在注册表中，New-Item 用于创建注册表项和注册表条目。
+
+[Convert]::ToInt32($RegDebug,10)  把$RegDebug转换为int32位（调用的C#方法，是内容转换）
+Convert.ToInt32（string value,int fromBase）fromBase为进制
+c#中
+string text="12345";
+int id=(int)text;
+因为string 和 int是两个完全不同的并且互不兼容的类型。能够使用（int）进行强转换类型的只能是数值类型了，例如long、short、double等。不过进行这种转换时你需要考虑精度问题
+### 特殊运算符
+::  表示静态成员运算符，调用.net中的类及其属性和方法比如Thread.Sleep()方法，[System.Threading.Thread]::Sleep(10000);
+[]  表示索引

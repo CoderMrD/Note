@@ -150,4 +150,46 @@ print list(islice(fib(),5))
 [0,1,2,3]
 ```
 
-###  建议枚举替代实现的缺陷
+###  建议11：理解枚举替代实现的缺陷
+- 枚举型是一个集合，集合中的元素(枚举成员)是一些命名的整型常量
+1）使用类属性
+```python
+class Season:
+    Spring, Summer, Autumn, Winter=range(4)
+```
+2) 借助函数
+
+缺陷：
+- 允许枚举值重复
+- 支持无意义的操作，如对季节的加减
+
+python2.7以后可以使用第三方模块flufl.enum,包含两种枚举类型：一种是Enum，只要保证枚举值唯一即可，另一种是IntEnum，其枚举值为int型。
+```python
+from flufl.enum imort Enum
+class Seasons(Enum):        # 继承自Enum定义枚举
+    Spring = "Spring"
+    Summer = 2
+    Autumn = 3
+    Winner = 4
+Seasons = Enum('Seasons','Spring Sumter Autumn Winter')
+```
+可以使用__members__属性对枚举名称进行遍历，也可以直接使用value属性获取枚举元素的值，不支持元素比较（无意义的操作）
+python3.4中加入了枚举Enum
+
+### 建议12：不推荐使用type来进行类型检查
+按照python理念，充分利用变量的动态性特征，不推荐类型检查。
+不可以进行类型检查，而在出错的时候通过抛出异常来进行处理。
+一定要使用的话可以用types
+```python
+import types
+if type(a) is types.ListType:
+```
+缺陷：
+1)继承自int基类的类，不被type认为是int类型
+2)python2.7中，古典类(不由任意内置类型派生出的类)的实例返回的都是<type'instance'>
+
+### 建议13：尽量转换为浮点类型后再做除法
+
+
+
+

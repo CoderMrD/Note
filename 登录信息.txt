@@ -19,6 +19,10 @@ rest/endpoint.py
 PC版：打开OPERATIONS CONSOLE
 重装后X86中有scom文件
 
+windows2019
+scom2019
+10.240.197.223
+
 文件服务器
 \\10.240.196.106              Administrator           SYS2009health
 	\\10.240.196.106\Microsoft_UIM\MSUIM6.2\HWMP
