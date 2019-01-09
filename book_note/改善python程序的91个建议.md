@@ -206,11 +206,17 @@ eval(expression[, globals[, locals]])
 ### 建议17：考虑兼容性，尽可能使用Unicode（限于python2）
 python2 Unicode(字符串加上u)对应于python3 str
 python2 str 对应于python3 byte
-utf8在windows系统中被映射为GBK编码，所以当控制台上直接显示utf8时，两种编码不兼容，以UTF8形式表示的编码在GBK编码中被解释为其他的符号而产生乱码。要解决乱码问题可以使用Unicode作为中间介质来完成转换。首先对读入的字符用UTF-8解码（decode），然后用GBK进行编码。
+utf8在windows系统中被映射为GBK编码，所以当控制台上直接显示utf8时，两种编码不兼容，以UTF8形式表示的编码在GBK编码中被解释为其他的符号而产生乱码。要解决乱码问题可以使用Unicode作为中间介质来完成转换。首先对读入的字符用UTF-8解码（decode），然后用GBK进行编码。如str.decode("utf-8").encode("gbk")
 python中默认编码是ASCII，可以在首行对指定源文件进行编码声明
 ```python
 # -*- coding: <encoding name> -*-
 ```
+某些情况下可能会出现异常，如'gbk' codec can't encode character u'\uufeff' in position 0;
+因为某些软件在保存UFT8编码时，会在文件最开始的地方插入不可见的字符BOM（0xEF 0xBB 0xBF）,这些不可见字符无法被正确的解析，可以用codecs模块处理
+import codecs
+content[:3] == codecs.BOM_UTF8
+content = content[3:]
+content.decode("utf-8")
 
 ### 建议18：构建合理的包层次来管理module
 简单地说包就是目录，除了包含模块(python文件)外，还包含一个__init__.py
@@ -222,7 +228,8 @@ Package/ __init__.py
         Module2.py
 包中的模块可以通过 . 访问符进行访问，即包名.模块名
 
-
+## 第三章 基础语法
+### 建议19：有节制的使用from...import..语句
 
 
 

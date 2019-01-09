@@ -90,7 +90,7 @@ SCOM安装的时候使用远程的SQLserver
 注册表中查看scom连接的数据库
 regedit进入注册表-->
 HEKY_LOCAL_MACHINE-->SOFTWARE-->Microsoft-->Microsoft Operations Manager--3.0-->
-setup-->右侧DatabaseServername:data（servername）--and--Databasename:data（用的表名）
+setup-->右侧DatabaseServername:data（servername，装在哪一台机器上）--and--Databasename:data（在那台机器上的表是什么名字）
 可以右键选中点击Modify赋值data
 
 通过sql server management studio连接

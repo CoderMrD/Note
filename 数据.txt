@@ -153,6 +153,10 @@ code_scom_mp\Server\MgmtPack\Lenovo.HardwareMgmtPack.xSystem.xml  IBMAutoDiscove
 WriteLog 日志位置
 4597 process{}
 
+inband --> host&server
+scom --> agent(mp,software)-->host ---> bmc acount
+oob -->    bmc
+
 
 code_uus\UnifiedService\unified_service\tools\Lenovo.LXCI.UusService\LenovoScomInterface
 code_uus\UnifiedService\unified_service\backend\webroot\bin\ManagementPlatform\microsoft\BmcAutoDiscovery.py
@@ -166,3 +170,5 @@ Windows Installer 日志文件“C:\Program Files\Microsoft System Center 2016\Operat
 
 event view
 点击“开始→运行”，输入eventvwr，点击“确定”，就可以打开事件查看器。
+
+IBM.StateView.LicensedSystemGroup 
