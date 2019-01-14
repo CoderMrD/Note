@@ -171,4 +171,17 @@ Windows Installer 日志文件“C:\Program Files\Microsoft System Center 2016\Operat
 event view
 点击“开始→运行”，输入eventvwr，点击“确定”，就可以打开事件查看器。
 
-IBM.StateView.LicensedSystemGroup 
+IBM.StateView.LicensedSystemGroup
+
+https://technet.microsoft.com/en-us/library/hh457558(v=sc.12).aspx
+Operations Manager key concept: https://technet.microsoft.com/library/hh230741.aspx
+https://technet.microsoft.com/zh-cn/library/dd788959.aspx
+https://technet.microsoft.com/zh-cn/library/dd789012.aspx 
+https://msdn.microsoft.com/en-us/library/hh964751.aspx
+https://msdn.microsoft.com/en-us/library/gg461967.aspx
+https://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.enterprisemanagementgroup.aspx
+https://msdn.microsoft.com/en-us/library/hh328968.aspx
+https://msdn.microsoft.com/en-us/library/gg485126.aspx
+
+https://msdn.microsoft.com/en-us/library/bb437603.aspx (criteria syntax) 
+ 
