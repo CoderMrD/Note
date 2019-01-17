@@ -76,10 +76,6 @@ SYS2011health
 refresh: management/microsoft/servermanagement.py
 
 
-ICE-Ad
-user：duch2
-password:MUyi123..
-
 SCOM安装的时候使用远程的SQLserver
 只需要在servername\instancename中添加另一台机器的hostname即可，database名字自己起的
 (报错解决：打开提示中连接不上的服务，关闭ipv6)

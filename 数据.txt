@@ -173,6 +173,10 @@ event view
 
 IBM.StateView.LicensedSystemGroup
 
+aotodiscovery返回数据位置scom数据库sqlserver，
+控制autodiscovery时间：左边Authoring--> Find autoOOB --> 右键overrides --> Override the Object Discovery --> For all objects of class:windows computer on lenovo system
+
+global.conf：programData\Lenovo\LXCI\UUS\global.conf
 https://technet.microsoft.com/en-us/library/hh457558(v=sc.12).aspx
 Operations Manager key concept: https://technet.microsoft.com/library/hh230741.aspx
 https://technet.microsoft.com/zh-cn/library/dd788959.aspx
