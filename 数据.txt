@@ -136,6 +136,7 @@ coverity.icelab.lenovo.com:8080
 itcode
 password
 
+e rao ni
 3. arachni scan
 软件中ping环境的ip:8080
 Arachni scan：
@@ -161,7 +162,8 @@ oob -->    bmc
 code_uus\UnifiedService\unified_service\tools\Lenovo.LXCI.UusService\LenovoScomInterface
 code_uus\UnifiedService\unified_service\backend\webroot\bin\ManagementPlatform\microsoft\BmcAutoDiscovery.py
 
-
+SCVMM araoni scan
+198.98
 
 autodiscovery
 administration-->左边monitoring上面有discovery wizard,点击，windows computer
@@ -189,3 +191,8 @@ https://msdn.microsoft.com/en-us/library/gg485126.aspx
 
 https://msdn.microsoft.com/en-us/library/bb437603.aspx (criteria syntax) 
  
+ 
+https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ipmiprv/microsoft-ipmi-requestresponse  ipmi命令
+
+影响autodiscovery
+function: set-UserPassword
