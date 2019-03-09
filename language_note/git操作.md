@@ -1,3 +1,10 @@
+创建ssh
+ssh-keygen -t rsa -C "youremail@example.com"
+把主页面生成的公匙粘贴到git
+
+
+test
+
 git init 用 Git 来对现有的项目进行管理
 git clone https://github.com/xxx  克隆现有的仓库
 
