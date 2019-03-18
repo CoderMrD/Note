@@ -24,14 +24,18 @@ on(this.txtPass, "input", lang.hitch(this, function()
     {
          rt = this.txtPass
     }));
-会先执行，function里面的内容，然后再给this.txtPass赋值，所以会出现在input框中输入的内容，和rt中的内容不一致的问题(rt中总比input框中少一位)  
+会先执行，function里面的内容，然后再给this.txtPass赋值（执行setValue方法），所以会出现在input框中输入的内容，和rt中的内容不一致的问题(rt中总比input框中少一位)  
 
 dojo onchange事件
 on(this.txtPass, "change", lang.hitch(this, function(e)
             {
                 console.log(this.txtPass);
             }));
-onchange事件可以实时获取到this.txtPass(先赋值给this.txtPass，在执行function的内容),但是需要失去焦点才能触发，所以可以在html的input中添加data-dojo-props="intermediateChanges: true"，就可以控制焦点
+onchange事件可以实时获取到this.txtPass(先赋值给this.txtPass，在执行function的内容),但是需要失去焦点才能触发，所以可以在html的input中添加data-dojo-props="intermediateChanges: true"，就可以设定为调用setValue方法后立刻引发onChange事件
+
+data-dojo-props 和 data-dojo-type 是html5 为DOJO 而设计的两个专用属性，
+data-dojo-props 用来设置dojo widget 的属性，data-dojo-type用来设置dojo widget的类型
+intermediateChanges:判断在调用 setValue 方法后是否立即引发 onChange 事件。
 
 dojo.connect
 ====================================
