@@ -19,6 +19,20 @@ constructor初始化dojo类的属性
 
 dojo.byid("id").innerHTML返回中间的内容，如果有多个这个id的，就返回第一个
 
+dojo input事件
+on(this.txtPass, "input", lang.hitch(this, function()
+    {
+         rt = this.txtPass
+    }));
+会先执行，function里面的内容，然后再给this.txtPass赋值，所以会出现在input框中输入的内容，和rt中的内容不一致的问题(rt中总比input框中少一位)  
+
+dojo onchange事件
+on(this.txtPass, "change", lang.hitch(this, function(e)
+            {
+                console.log(this.txtPass);
+            }));
+onchange事件可以实时获取到this.txtPass(先赋值给this.txtPass，在执行function的内容),但是需要失去焦点才能触发，所以可以在html的input中添加data-dojo-props="intermediateChanges: true"，就可以控制焦点
+
 dojo.connect
 ====================================
 connect(/*Object|null*/ obj,
