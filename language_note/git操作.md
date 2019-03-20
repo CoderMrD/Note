@@ -73,6 +73,7 @@ merge操作，合并分支
 
 
 git fetch   运行 git fetch，可以将远程分支信息获取到本地
+git pull    git fetch和git merge的结合，直接覆盖本地
 git checkout -b local-branchname origin/remote_branchname   将远程分支remote_branchname映射到本地命名为local-branchname 的一分支。 
 
 在使用git命令的时候，后面可能会带有参数，有些参数前面是单横杠有些是双横杠。
