@@ -34,3 +34,5 @@ if len(s) > pageSize:
         begin = (currentPage-1)*pageSize
         end = currentPage * pageSize
         print s[begin:end]
+        
+pip和python绑定，使用python -m pip xxx
