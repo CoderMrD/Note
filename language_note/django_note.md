@@ -1,0 +1,4 @@
+syncdb老版本django用的迁移命令，现在已经移除。执行这个命令django会查找INSTALLED-APPS里的每一个models.py文件，并为找到的每一个model都创建一张数据库表，但是如果只是修改字段，是不会同步的。
+makemigrations 用于执行迁移动作，具有syncdb的功能
+migrate 基于当前的model创建新的迁移策略文件
+数据库常用字段:
