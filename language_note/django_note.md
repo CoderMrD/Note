@@ -2,3 +2,8 @@ syncdb老版本django用的迁移命令，现在已经移除。执行这个命�
 makemigrations 用于执行迁移动作，具有syncdb的功能
 migrate 基于当前的model创建新的迁移策略文件
 数据库常用字段:
+越芽说项目总结
+后端django + xadmin
+前端
+web页面
+小程序页面
