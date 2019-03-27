@@ -13,6 +13,12 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git diff --cached  暂存起来的文件和上次提交时的快照之间的差异
 - git pull：取回远程主机某个分支的更新，再与本地的指定分支合并
 
+远程仓库强制覆盖本地分支
+  清除本地修改
+- git reset --hard
+  拉代码
+- git pull
+
 - git remote add origin https://xxx    关联到远程仓库
 
 - git branch  //查看当前分支,当前分支前面会标一个*号
