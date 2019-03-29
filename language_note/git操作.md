@@ -14,10 +14,16 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git pull：取回远程主机某个分支的更新，再与本地的指定分支合并
 
 远程仓库强制覆盖本地分支
+方法一：
   清除本地修改
 - git reset --hard
   拉代码
 - git pull
+
+方法二：
+直接将本地仓库重置为远程仓库
+git reset --hard origin/master
+
 
 - git remote add origin https://xxx    关联到远程仓库
 
