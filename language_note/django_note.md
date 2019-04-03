@@ -74,11 +74,50 @@ python manage.py startapp app名称
 
 ## 二、配置
 - 在setting.py中注册app
-``` python
-# 在INSTALLED_APPS列表中添加
-# 自动添加的，如果不自动添加，直接加app名称即可
-app名称.apps.app名称Config
+子应用的配置信息文件apps.py中的Config类添加到INSTALLED_APPS列表中。
+例如，将刚创建的users子应用添加到工程中，可在INSTALLED_APPS列表中添加**'users.apps.UsersConfig'**。（app名称.apps.app名称Config）
+
+- 配置数据库
+对DATABASE进行修改
+默认是sqlite
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR,'sqlite.db'),
+        }
+os.path拼接的是sqlite的文件名，在自己开发的时候可以使用sqlite，比较简单，不需要安装
+配置mysql
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'database名字',
+        'USER':'root',
+        'PASSWORD':'MySQL数据库密码',
+        'HOST':'127.0.0.1',
+    }
+}
+
+python3连接mysql需要安装pymysql
+
+```shell
+pip install PyMYSQL
 ```
+在项目文件夹中的__init__(和setting.py在同一文件夹)中添加以下代码
+```python
+import pymysql
+pymysql.install_as_MySQLdb()
+```
+接下来就可以连接mysql了
+
+- 配置ALLOWED_HOST 
+ALLOWED_HOSTS是为了限定请求中的host值，以防止黑客构造包来发送请求。只有在列表中的host才能访问，里面是字符串列表，
+这个字符串列表值表示当下这个Django站点可以提供的host/domain(主机/域名），不建议使用'*' 来配置，不安全
+可以使用绝对匹配，也可以使用正则中的一些通配符来匹配
+
+ALLOWED_HOSTS = []
+当DEBUG设置为flase的时候，必须设定ALLOWED_HOSTS的值，否则会抛出异常
+当DEBUG设置为True，且ALLOWED_HOSTS设置为空，主机将针对['localhost'，'127.0.0.1'，'[:: 1]']进行验证
+django默认工作在调式Debug模式下，如果增加、修改、删除文件，服务器会自动重启
 
 
 
