@@ -120,6 +120,53 @@ ALLOWED_HOSTS = []
 django默认工作在调式Debug模式下，如果增加、修改、删除文件，服务器会自动重启
 
 
+## 三、创建视图
+视图应定义在子应用的views.py中
+### 1. 创建
+
+打开刚创建的users模块(app)，在views.py中编写视图代码。
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    """
+    index视图
+    :param request: 包含了请求信息的请求对象
+    :return: 响应对象
+    """
+    return HttpResponse("hello the world!")
+```
+
+说明：
+
+* 视图函数的第一个传入参数必须定义，用于接收Django构造的包含了请求数据的**HttpReqeust**对象，通常名为**request**。
+* 视图函数的返回值必须为一个响应对象，不能像Flask一样直接返回一个字符串，可以将要返回的字符串数据放到一个**HTTPResponse**对象中。
+
+### 2. 定义路由URL
+
+#### 1) 在子应用中新建一个urls.py文件用于保存该应用的路由。
+
+![新建urls.py文件](/images/new_urls_file.png)
+
+#### 2) 在users/urls.py文件中定义路由信息。
+
+```python
+from django.conf.urls import url
+
+from . import views
+
+# urlpatterns是被django自动识别的路由列表变量
+urlpatterns = [
+    # 每个路由信息都需要使用url函数来构造
+    # url(路径, 视图)
+    url(r'^index/$', views.index),
+]
+```
+
+
+#### 配置认证user（djjango自带的user表）
+AUTH_USER_MODEL='users.UserProfile'
 
 supervisorctl reload
 supervisorctl status
