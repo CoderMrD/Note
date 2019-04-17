@@ -567,3 +567,22 @@ define([ "dojo/dom"], function(dom) {
 4个常数： A = 0x67452301, B = 0x0EFCDAB89, C = 0x98BADCFE, D = 0x10325476;
 4个函数：F(X,Y,Z)=(X & Y) | ((~X) & Z); G(X,Y,Z)=(X & Z) | (Y & (~Z));  H(X,Y,Z)=X ^ Y ^ Z; I(X,Y,Z)=Y ^ (X | (~Z));
 `
+
+
+# win32gui
+
+- FindWindow(lpClassName=None, lpWindowName=None):
+    - 描述：自顶层窗口（也就是桌面）开始搜索条件匹配的窗体，并返回这个窗体的句柄。不搜索子窗口、不区分大小写。找不到就返回0
+    - 参数：
+        - lpClassName：字符型，是窗体的类名，这个可以在Spy++里找到。
+        - lpWindowName：字符型，是窗口名，也就是标题栏上你能看见的那个标题。
+    - 说明：这个函数我们仅能用来找主窗口。
+
+- FindWindowEx(hwndParent=0, hwndChildAfter=0, lpszClass=None,lpszWindow=None);
+    - 描述：搜索类名和窗体名匹配的窗体，并返回这个窗体的句柄。不区分大小写，找不到就返回0。
+    - 参数：
+        - hwndParent：若不为0，则搜索句柄为hwndParent窗体的子窗体。
+        - hwndChildAfter：若不为0，则按照z-index的顺序从hwndChildAfter向后开始搜索子窗体，否则从第一个子窗体开始搜索。
+        - lpClassName：字符型，是窗体的类名，这个可以在Spy++里找到。
+        - lpWindowName：字符型，是窗口名，也就是标题栏上你能看见的那个标题。
+    - 说明：找到了主窗口以后就靠它来定位子窗体啦。
