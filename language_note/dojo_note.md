@@ -59,3 +59,6 @@ dojo.disconnect(handle);
 dojo.addOnLoad
 dojo中通过dojo.declare方法定义用于表示一个逻辑实体的声明称为类，因为js中不支持类。
 dojo.require的作用就像python中的import，c中的#include,把指定的资源加载到页面以供开发人员使用。另外一个重要的特点就是对工具箱的本地安装执行同步加载，而在跨域加载工具箱时执行一步操作。
+
+<button data-dojo-type="dijit/form/Button" >Close</button>中的data-dojo-type="dijit/form/Button"会引入Button这个Widgets
+<div id="mybutton" dojotype="dijit.form.Button">Submit</div> 则必须先引入Widgets，dojo.require("dijit.form.Button"); 
