@@ -24,17 +24,6 @@ vue的特色之一就是不需要去操作dom元素，使用vue提供的指令�
 
 html文件默认是用file协议打开的，使用http协议打开的话在vscode中可以安装express插件，然后ctrl+shift+p调出命令模式，找到Express: Host Current Workspace and Open in Browser,运行在当前目录的server，使用Express:stop server来停止
 
-## html,css,js加载顺序
-1. js放在head中会立即执行，阻塞后续的资源下载与执行。因为js有可能会修改dom，如果不阻塞后续的资源下载，dom的操作顺序不可控。
-正常的网页加载流程是这样的。
-    - 浏览器一边下载HTML网页，一边开始解析
-    - 解析过程中，发现< script >标签
-    - 暂停解析，网页渲染的控制权转交给JavaScript引擎
-    - 如果< script >标签引用了外部脚本，就下载该脚本，否则就直接执行
-    - 执行完毕，控制权交还渲染引擎，恢复往下解析HTML网页
-
-如果外部脚本加载时间很长（比如一直无法完成下载），就会造成网页长时间失去响应，浏览器就会呈现“假死”状态，这被称为“阻塞效应”。html需要等head中所有的js和css加载完成后才会开始绘制，但是html不需要等待放在body最后的js下载执行就会开始绘制,因此将js放在body的最后面，可以避免资源阻塞，同时使静态的html页面迅速显示。**将脚本文件都放在网页尾部加载**，还有一个好处,在DOM结构生成之前就调用DOM，JavaScript会报错，如果脚本都在网页尾部加载，就不存在这个问题，因为这时DOM肯定已经生成了，所以js一般都放到body元素的最后
-
 骚操作：
 chrome调慢加载,选择slow 3g
 ![慢动作](/images/SetSlow3g.png)
