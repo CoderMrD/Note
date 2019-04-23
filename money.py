@@ -20,6 +20,8 @@ if __name__ == "__main__":
 	# 127.0.0.1:5557
 	#test0 = Money(device_x=1280,device_y=720, device_name="emulator-5554")
 	test1 = Money(device_x=1280,device_y=720, device_name="emulator-5556")
+	#test1 = Money(device_x=1280,device_y=720, device_name="127.0.0.1:5557")
+	
 	while True:
 		#test0.run()
 		test1.run()
