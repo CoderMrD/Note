@@ -259,7 +259,33 @@ python会将++i操作解释为+(+i)，  其中+表示正数符号
 ### 建议22：使用with来自动关闭资源
 python上下文管理器，即在对象中定义__enter__()和__exit__方法
 
-### 建议23：
+### 建议23：使用else简化循环(异常处理)
+```python
+# 如果for循环中的内容一次都没有执行，那么会执行一次else中的内容
+for xxx:
+    xxx
+else:
+    xxx
+```
+```python
+# 如果try中的内容没有被执行，那么会执行一次else中的内容，而finally则是无论上面的是否执行，都会执行finally中的内容
+try:
+    xxx
+except EXception as e:
+    xxx
+else:
+    xxx
+finally:
+    xxx
+```
 
 ### 建议24：
+
+### 建议25：
+
+### 建议26：
+
+### 建议27：
+
+### 建议28：
 
