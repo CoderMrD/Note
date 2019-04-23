@@ -1,4 +1,5 @@
 有需要细看：建议九
+待看
 ## 第一章 引论
 ### 建议一：pythonic风格的概念
 
@@ -393,29 +394,75 @@ print(s)
 python2中要注意判断字符串是str还是unicode。
 判断一个变量s是不是字符串应使用isinstance(s,basestring)。
 basestring是str和unicode的基类。
+is*()形式的函数，进行判断是否是数字、字母等。
+- 查找和替换
+count(),find(),index(),rfind等方法都可以接受start，end参数，可以优化性能。
+判断是否包含子串的判定推荐使用in和not in操作符
+待看
 
 ### 建议37：按需选择sort()和sorted()
-
+待看
 ### 建议38：使用copy模块深拷贝对象
-
+待看
 ### 建议39：使用counter进行计数统计
-
+待看
 ### 建议40：深入掌握ConfigParser
-
+待看
 ### 建议41：使用argparse处理命令行参数
+待看
+### 建议42：使用pandas处理大型CSV文件
+暂时不看
+### 建议43：使用ElementTree解析XML
+暂时不看
+### 建议44：理解模块pickle优劣
+序列化模块
+待看
+### 建议45：序列化操作--JSON
+json在序列化datetime的时候会抛出TypeError异常，因为json模块不支持datetime的序列化，因此需要对json本身的JSONEncoder进行扩展，多种方法可以实现。
+json模块提供了编码(JSONEncoder)和解码类(JSONDecoder)，以便用户对其魔人不支持的序列化类型进行扩展
+```python
+import datetime
+from time import mktime
+try: import simplejson as json
+except ImportError: import json
 
-### 建议42：
+class DateTimeEncoder(json.JSONEncoder):  # 对JSONEncoder进行扩展
+    def default(self, obj):
+        if isinstance(obj, datetime.datetime):
+            return obj.strftime('%Y-%m-%d %H:%M:%S')
+        elif isinstance(obj, date):
+            return obj.strftime('%Y-%m-%d')
+        return json.JSONEncoder.default(self, obj)
 
-### 建议43：
+d = datetime.datetime.now()
+print(json.dumps(d,cls=DateTimeEncoder)) # 使用cls指定编码器名称
 
-### 建议44：
+```
+python中的json模块性能比pickle与cPickle稍逊，如果对序列化性能要求非常高的场景，可以选择cPick模块。
 
-### 建议45：
+### 建议46：使用traceback获取栈信息
 
-### 建议46：
+### 建议47：使用logging记录日志信息
 
-### 建议47：
+### 建议48：使用threading模块编写多线程程序
 
-### 建议48：
+### 建议49：使用Queue使多线程编程更安全
 
-### 建议49：
+# 第五章 设计模式
+
+### 建议50： 利用模块实现单例模式
+
+### 建议51：用mixin模式让程序更灵活
+
+### 建议52：用发布订阅模式实现松耦合
+
+### 建议53：用状态模式美化代码
+
+
+# 第六章 内部机制
+
+### 建议54：
+
+### 建议55：
+
+### 建议56：
