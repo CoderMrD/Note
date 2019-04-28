@@ -441,10 +441,25 @@ print(json.dumps(d,cls=DateTimeEncoder)) # 使用cls指定编码器名称
 python中的json模块性能比pickle与cPickle稍逊，如果对序列化性能要求非常高的场景，可以选择cPick模块。
 
 ### 建议46：使用traceback获取栈信息
-
+traceback可以输出完整的栈信息，包括调用顺序，异常发生的语句、错误类型等。
+待看
 ### 建议47：使用logging记录日志信息
-
+待看
+关于logging的使用，有几点建议
+1) 尽量为logging取一个名字而不是默认，这样当在不同模块中使用的时候，其他模块只需要使用以下代码就能方便地使用同一个logger，因为他本质上符合单例模式。
+```python
+import logging
+logging.basicConig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+```
 ### 建议48：使用threading模块编写多线程程序
+GIL存在于python解释器中，用来确保当前只有一个线程被执行,当一个线程获得GIL后，这个线程将被执行，退出时释放GIL，由下一个获得GIL的线程执行,这导致了纯Python代码使用多线程并不能提高运行速率，只是在遇到需要等待操作的时候，使用多线程会提升效率。
+python多线程有两个模块，threading和thread，一般情况下使用threading，特殊情况才使用thread，下面是原因：
+1. threading模块对同步原语的支持更为完善和丰富。
+2. threading模块在主线程和子线程交互上更为友好。
+3. thread模块不支持守护线程。
+    thread模块中主线程退出的时候。所有的子线程不论是否还在工作，都会被强制结束。
+4. python3中已经不存在thread模块。
 
 ### 建议49：使用Queue使多线程编程更安全
 
