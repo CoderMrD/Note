@@ -214,7 +214,17 @@ os.getenv()获取一个环境变量，如果没有返回none
 `
 返回一个列表，第一个元素是此py文件位置，第二个往后是运行的时候输入的参数
 `
+- sys.executable
 
+`
+返回python解释器的路径
+`
+
+- sys.path
+
+`
+返回python搜索包的路径
+`
 ## time
 - ctime
 `
