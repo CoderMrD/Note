@@ -75,3 +75,37 @@ v-html将要渲染的数据解析成html
     </script>
 ```
 
+### 指令v-bind
+属性绑定
+v-bind:可以缩写为:
+
+### 指令v-on
+监听DOM事件
+v-on:可以缩写为@
+应该支持js中的事件
+``` bash
+@click = "counter++"
+```
+click 和 tap 事件比较
+二者都会在点击时触发，但是在手机WEB端，click会有200~300ms延迟。
+
+### 样式绑定
+使用v-bind:class设置一个对象，从而动态的切换class
+下面的例子通过动态改变isActive和hasError的属性来动态改变div的样式，引号里面也可以是各种表达式
+``` html
+<div class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    isActive: true,
+	hasError: true
+  }
+})
+</script>
+```
+
+#### 指令v-for
+<div v-for="(items key index) in list" :key="key"></div>
