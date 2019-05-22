@@ -600,6 +600,11 @@ print md5.hexdigest()
 
 Python自带的hmac模块实现了标准的Hmac算法。我们来看看如何使用hmac实现带key的哈希。
 
+# binascii
+编码转换
+- hexlify
+作用是返回的二进制数据的十六进制表示。
+
 # win32gui
 
 - FindWindow(lpClassName=None, lpWindowName=None):
