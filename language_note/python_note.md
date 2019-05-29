@@ -207,6 +207,10 @@ os.getenv()获取一个环境变量，如果没有返回none
 ```
 获取当前目录的父目录字符串名：('..')
 ```
+- os.urandom(n)
+
+函数定位： Return a string of n random bytes suitable for cryptographic use. 
+意思就是，返回一个有n个byte那么长的一个string，然后很适合用于加密。
 
 ## sys
 - sys.argv
