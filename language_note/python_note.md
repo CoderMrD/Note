@@ -229,6 +229,15 @@ os.getenv()获取一个环境变量，如果没有返回none
 `
 返回python搜索包的路径
 `
+
+- sys.exc_info
+
+`
+返回捕获异常详细信息
+exc_type, exc_value, exc_traceback = sys.exc_info()
+分别为异常类型，异常描述，traceback object
+`
+
 ## time
 - ctime
 `
