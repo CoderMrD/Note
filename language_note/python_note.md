@@ -233,9 +233,30 @@ os.getenv()获取一个环境变量，如果没有返回none
 - sys.exc_info
 
 `
-返回捕获异常详细信息
+返回捕获异常信息，返回的信息是一个元组
 exc_type, exc_value, exc_traceback = sys.exc_info()
-分别为异常类型，异常描述，traceback object
+分别为异常的对象类型，异常描述，traceback对象
+`
+## traceback
+获取异常详细信息
+
+- traceback.extract_tb()
+
+`
+需要传入的参数是traceback对象，可以返回具体的错误信息
+返回一个跟踪对象(traceback)的元组列表. 元组内容为(filename, line number, function name, text).
+`
+
+- traceback.print_tb(traceback[, limit[, file]])
+
+`
+打印栈的跟踪信息. 如果省略limit, 将打印所有跟踪入口信息. file默认为std.err.
+`
+
+- traceback.format_exception(type, value, tb[, limit])
+
+`
+格式化栈信息和异常信息. 返回一个列表, 包括代码文件和代码行, 以及异常信息.
 `
 
 ## time
