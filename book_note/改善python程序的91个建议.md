@@ -442,7 +442,9 @@ python中的json模块性能比pickle与cPickle稍逊，如果对序列化性能
 
 ### 建议46：使用traceback获取栈信息
 traceback可以输出完整的栈信息，包括调用顺序，异常发生的语句、错误类型等。
-待看
+开发人员希望能看到异常发生时的现场信息，而traceback能满足这个需求。
+traceback.print_exc() 方法打印出的信息有三部分，错误类型(IndexError),错误对应的值(list index out of range)以及具体的trace信息，包括文件名、具体的行号、函数名以及对应的源代码。
+
 ### 建议47：使用logging记录日志信息
 待看
 关于logging的使用，有几点建议
