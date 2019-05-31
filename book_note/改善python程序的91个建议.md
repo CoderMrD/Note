@@ -444,6 +444,10 @@ python中的json模块性能比pickle与cPickle稍逊，如果对序列化性能
 traceback可以输出完整的栈信息，包括调用顺序，异常发生的语句、错误类型等。
 开发人员希望能看到异常发生时的现场信息，而traceback能满足这个需求。
 traceback.print_exc() 方法打印出的信息有三部分，错误类型(IndexError),错误对应的值(list index out of range)以及具体的trace信息，包括文件名、具体的行号、函数名以及对应的源代码。
+traceback.print_exception(type,value,traceback[,limit[,file]]),根据limit的设置打印栈信息，file为None的情况下定位到sys.stderr,否则写入文件；其中type、value、traceback这三个参数对应的值可以从sys.exc_info()中获取
+traceback.print_exc([limit[,file]]),为print_exception()函数的缩写，不需要传入type、value、traceback这三个参数
+traceback.format_exc([limit]),与print_exc()类似，区别在于返回的形式为字符串。
+本质上模块traceback获取异常相关的数据都是通过sys.exc_info()函数得到的。当有异常发生的时候，该函数以元组的形式返回(type,value,traceback)，
 
 ### 建议47：使用logging记录日志信息
 待看
