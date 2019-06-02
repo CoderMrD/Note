@@ -30,7 +30,8 @@ git clean经常和git reset --hard一起结合使用. 记住reset只影响被tra
 git clean -n
 是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒
 git clean -f
-删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过
+删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过\
+untrack file：指没有添加的文件，而非已有文件中的内容。
 
 - git remote add origin https://xxx    关联到远程仓库
 
