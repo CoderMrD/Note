@@ -418,8 +418,11 @@ count(),find(),index(),rfind等方法都可以接受start，end参数，可以�
 序列化模块
 待看
 ### 建议45：序列化操作--JSON
+变量从内存中变成可存储或传输的过程称之为序列化。
+序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上。
+反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化
 json在序列化datetime的时候会抛出TypeError异常，因为json模块不支持datetime的序列化，因此需要对json本身的JSONEncoder进行扩展，多种方法可以实现。
-json模块提供了编码(JSONEncoder)和解码类(JSONDecoder)，以便用户对其魔人不支持的序列化类型进行扩展
+json模块提供了编码(JSONEncoder)和解码类(JSONDecoder)，以便用户对其默认不支持的序列化类型进行扩展
 ```python
 import datetime
 from time import mktime
@@ -535,3 +538,23 @@ GOF的23种设计模式中，单例是最常用的模式，通过单例模式可
 ### 建议74 为包编写单元测试
 
 ### 建议75 利用测试驱动开发提高代码的可测性
+
+### 建议88 使用multiprocessing克服GIL的缺陷
+Proccess是multiprocessing中较为重要的一个类，用于创建进程
+Process([gorup [, target [, name [, args [, kwargs]]]]])
+参数:
+- target：可调用对象
+- args表示调用对象的位置参数元组
+- kwargs表示调用对象的字典
+- name为进程的名称
+- group一般设置为None
+该类提供的方法与属性基本与threading.Thread类一致，包括is_alive()、join([timeout])、run()、start()、terminate()、daemon、exitcodename、pid等
+进程间的数据空间相互独立，因此进程之间数据的共享和传递不如线程来得方便。
+使用注意：
+1) 进程之间通信优先考虑Pipe和Quene，而不是Lock、Event、Condition、Semaphore等同步原语。
+进程中的类Queue使用pipe等原语来实现，是进程安全的。
+2) 尽量避免资源共享。相比较于线程，进程间资源共享开销较大。
+3) 注意平台之间的差异。由于Linux平台使用fork()函数来创建进程，所以父进程中所有的资源会在子进程中共享，而Windows平台中父子进程相对独立，因此为了保持兼容性，最好将相关资源对象作为子进程的构造函数的参数传递进去。
+4) 尽量避免使用terminate()方式终止进程，并且确保pool.map中传入的参数时可以序列化的。
+
+### 建议89 使用线程池提高效率
