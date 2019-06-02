@@ -23,7 +23,14 @@ git clone https://github.com/xxx  克隆现有的仓库
 方法二：
 直接将本地仓库重置为远程仓库
 git reset --hard origin/master
-
+- git clean 
+it clean命令用来从你的工作目录中删除所有没有tracked过的文件
+git clean经常和git reset --hard一起结合使用. 记住reset只影响被track过的文件, 所以需要clean来删除没有track过的文件. 结合使用这两个命令能让你的工作目录完全回到一个指定的<commit>的状态
+用法
+git clean -n
+是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒
+git clean -f
+删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过
 
 - git remote add origin https://xxx    关联到远程仓库
 
