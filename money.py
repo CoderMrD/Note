@@ -15,8 +15,8 @@ class Money():
             os.system('ld -s {} input tap {} {}'.format(self.device_name, 1556/1920*self.device_x, 956/1080*self.device_y))
     
 if __name__ == "__main__":
-    test1 = Money(device_x=1280,device_y=720, device_name="1")
-    test0 = Money(device_x=1280,device_y=720, device_name="0")
+    test1 = Money(device_x=960,device_y=540, device_name="1")
+    test0 = Money(device_x=960,device_y=540, device_name="0")
     t1 = threading.Thread(target=test0.run,name="number1")
     t2 = threading.Thread(target=test1.run,name="number2")
     t1.start()
