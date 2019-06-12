@@ -34,3 +34,7 @@ excuse 借口，理由
 ceremony /'serɪmənɪ/ 典礼
 So you'd better have a good excuse for missing the ceremony this morning.
 
+consecutive /kən'sekjʊtɪv/ 连续
+sequence 序列
+The longest consecutive elements sequence is [1,2,3,4]
+最长连续元素序列是[1,2,3,4]
