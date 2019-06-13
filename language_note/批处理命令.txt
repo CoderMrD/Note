@@ -8,7 +8,7 @@ set a=5&echo %a%
 pause
 
 
-parse
+pause
 请按任意键继续. . .
 
 setlocal enabledelayedexpansion
@@ -61,4 +61,3 @@ DIR[盘符][路径][/W]
 pushd/popd
 cmd不支持访问UNC路径(IP),使用pushd unc_path可以将UNC路径映射为本地的Z盘，这时候可以正常使用cd，dir等命令，用完后使用popd将映射断开
 
-pause命令
