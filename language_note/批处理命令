@@ -1,0 +1,64 @@
+批处理运行命令的机制：
+批处理读取命令时是按行读取的（另外例如for命令等，其后用一对圆括号闭合的所有语句也当作一行）
+而为了能够感知环境变量的动态变化，批处理设计了变量延迟。
+简单来说，在读取了一条完整的语句之后，不立即对该行的变量赋值，而会在某个单条语句执行之前再进行赋值，也就是说“延迟”了对变量的赋值。
+@echo off 
+set a=4 
+set a=5&echo %a% 
+pause
+
+
+parse
+请按任意键继续. . .
+
+setlocal enabledelayedexpansion
+设置本地为延迟扩展。
+
+rem 设置文件所在目录
+set src_dir=D:\test\newtest\
+
+rem filename用于存放目标文件名
+set filename=""
+
+cd /d %src_dir%
+
+for /f %%a in ('dir /o-d /tc /b .') do (
+echo 文件完整信息: %%a
+set filename=%%~na%%~xa
+echo 文件名: !filename!, 最新创建时间： %%~ta
+goto end
+)
+
+:end
+
+dir /o-d
+
+?命令
+[命令]/?
+eg:dir/?
+
+echo off表示在此语句后所有运行的命令都不显示命令行本身
+@表示这一行运行的命令不显示命令行本身
+
+& 组合命令
+
+rem 注释
+
+cd命令
+要进入另一个盘符的文件夹要先进入这个盘符，再进入文件夹
+cd D:
+cd test
+加上/d 参数可直接进入
+cd /d D:\test
+
+for命令
+for /参数 %变量 in (集) do 命令
+(这里写的是在命令行里用的格式，如果是在批处理中,需要把其中%再多加个%形成%%)
+
+dir命令
+DIR[盘符][路径][/W]
+
+pushd/popd
+cmd不支持访问UNC路径(IP),使用pushd unc_path可以将UNC路径映射为本地的Z盘，这时候可以正常使用cd，dir等命令，用完后使用popd将映射断开
+
+pause命令
