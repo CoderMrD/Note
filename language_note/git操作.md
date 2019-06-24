@@ -12,6 +12,8 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git diff "文件名" //比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
 - git diff --cached  暂存起来的文件和上次提交时的快照之间的差异
 - git pull：取回远程主机某个分支的更新，再与本地的指定分支合并
+- git fetch: 相当于是从远程获取最新到本地，不会自动merge，git pull等于git fetch + git merge
+
 
 远程仓库强制覆盖本地分支
 方法一：
