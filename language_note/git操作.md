@@ -61,6 +61,7 @@ untrack file：指没有添加的文件，而非已有文件中的内容。
 - Git diff branch1 branch2 文件名(带路径)   //显示指定文件的详细差异
 - Git diff branch1 branch2  //显示出所有有差异的文件的详细差异
 
+git pull origin master --allow-unrelated-histories 允许合并不相关历史的内容
 - git branch --set-upstream-to=origin/test 当前分支关联到远程test分支
 
 
