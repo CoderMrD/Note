@@ -75,6 +75,7 @@ git pull origin master --allow-unrelated-histories 允许合并不相关历史�
 向前（命令窗口还没被关掉）
 - git reset --hard 1094a //版本号没必要写全，写前几位git就会自动去找
 - git reflog 记录每一条命令
+- git reset  fcd2093 a.jsp  只回退a.jsp这一个文件
 
 工作区：电脑里面能看到的目录
 .git不算工作区，而是git的版本库，里面有暂存区和分支
