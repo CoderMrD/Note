@@ -132,3 +132,14 @@ eg:git reset HEAD benchmarks.rb
 使用git add添加要提交的文件的时候，如果文件名是中文，会显示形如 274\232\350\256\256\346\200\273\347\273\223.png 的乱码。 
 解决方案：在bash提示符下输入： git config --global core.quotepath false
 
+git 换行符LF与CRLF
+Git提供了一个“换行符自动转换”功能。这个功能默认处于“自动模式”，当你在pull文件时，它试图将 UNIX 换行符（LF）替换为 Windows 的换行符（CRLF）；当你在push文件时，它又试图将 CRLF 替换为 LF。
+git config --global core.autocrlf false
+含义：
+AutoCRLF
+#提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf true
+#提交时转换为LF，检出时不转换
+git config --global core.autocrlf input
+#提交检出均不转换
+git config --global core.autocrlf false
