@@ -14,6 +14,9 @@ git clone https://github.com/xxx  克隆现有的仓库
 - git pull：取回远程主机某个分支的更新，再与本地的指定分支合并
 - git fetch: 相当于是从远程获取最新到本地，不会自动merge，git pull等于git fetch + git merge
 
+取消commit
+git reset --soft HEAD^  ： 取消commit，代码保留
+git reset --hard HEAD^ ： 取消commit，取消add的内容
 
 远程仓库强制覆盖本地分支
 方法一：
